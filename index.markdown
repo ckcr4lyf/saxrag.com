@@ -3,19 +3,29 @@ layout: page
 title: Home
 ---
 
-#### About
+### About
 
-I'm a Computer Science student who loves server side technologies, encryption and privacy. I enjoy networking (the TCP/IP kind) and writing low level code to do the same. 
+I am a 1337 coder who enjoys server side technologies, encryption and privacy. I also love networking (The TCP/IP kind) and writing software revolving around such stuff.
 
-[Peerview](https://peerview.saxrag.com) is an example of a program I wrote in C/C++ which uses UDP sockets to find IPs downloading a torrent.
+
+[qbit-race](https://github.com/ckcr4lyf/qbit-race) is a utility I wrote around managing torrents, sending notifications and confifuring rules to extract the maximum "racing" performance out of qBittorrent. Loved by members of the seedboxing community, it's one of my projects I am most proud of.
+
+[kouko](https://github.com/ckcr4lyf/kouko) is a bittorrent tracker I wrote in Typescript. I've always been intriguied by peer to peer technologies, and bittorrent is definitely my favourite. Toying around with the bittorrent protocol is what inspired me to write my own tracker, one which I could host as a public service as well. (An instance of kouko is hosted at tracker.mywaifu.best)
+
+[torrent-stats](https://github.com/ckcr4lyf/torrent-stats) is one of my first "real programs" that I wrote in C/C++, which utilizes C sockets to query UDP bittorrent trackers and C++ threads to parallelize the job, fetching a list of IPs that are sharing a particular torrent.
 
 [Bacryptup](https://bacryptup.saxrag.com/) is an end-to-end encrypted filesharing service I developed. The server never knows the file contents, and it offers a secure way share sensitive data. You can read more about it [here](/bacryptup)
 
-### Hire Me!
 
-I have ~2 years of experience working with startups as a backend developer, designing RESTful APIs and working with both Mongo & SQL. I'm also great with cloud infrastructure, handling deployments (AWS - EC2, S3 etc.) and proper Git usage. 
-In fact all my projects are hosted on my own servers, where I manage deployments, reverse proxies, DNS / TLS and the like. 
+### Experience
 
-I also like working with media streaming and DRM, analyzing network protocols, playing with Wireshark and advocating for privacy. I especially dislike censorship on the internet.
+My software engineering experience lies primarily in backend technologies, though I also do dabble in infrastructure related components such as docker / kubernetes and the like. I am a huge typescript fanboy, though I also do write a fair amount of Go.
 
-If you're interested in hiring me, shoot me an email and we can discuss more.
+For all my projects, I like to implement and do as much as I can myself - for instance avoid using tiny libraries (which exist for a good reason) and instead write the implementation myself. This stubornness has led to me learning a lot of things which I otherwise would have taken for granted.
+	
+As an example, I wrote my own Prometheus exporter for my bittorrent tracker kouko, which allowed me to have very fine grained control over how the metrics were exported. I like to host all my projects myself, which has taught me a lot about deployment and infrastructure management, such as using reverse proxies (my favorite being nginx), TCP tuning the kernel when dealing with large request volumes, handling domains and SSL certs, and of course, monitoring & logging! 
+
+#### Questions?
+
+Email me!
+
