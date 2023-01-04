@@ -27,7 +27,7 @@ As an example, I wrote my own Prometheus exporter for my bittorrent tracker kouk
 
 #### Questions?
 
-<a href="mailto:poiasdpoiasd@live.com">Email Me!</a> and [please use my PGP key](/assets/pgp/Raghu_Saxena_poiasdpoiasd@live.A1E21ED06A67D28A.asc) to encrypt all communications.
+<a href="mailto:poiasdpoiasd@live.com">Email Me!</a> and [please use my PGP key](/assets/pgp/Raghu_Saxena_poiasdpoiasd@live.com_0xA1E21ED06A67D28A.asc) to encrypt all communications.
 
 
 ### I use arch, btw
