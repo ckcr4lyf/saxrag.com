@@ -22,7 +22,7 @@ title: saxrag
 email: poiasdpoiasd@live.com
 description: >- # this means to ignore newlines until "baseurl:"
   Overview of some of the awesome stuff I've made, and my opinions on technology. Also cocktails.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://saxrag.com/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: yeksUHDEE
 github_username:  ckcr4lyf

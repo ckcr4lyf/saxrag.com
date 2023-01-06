@@ -5,5 +5,7 @@
 entries:
   - title: Blog
     url: /blog
+  - title: Cocktails
+    url: /cocktails
   - title: github
     url: https://github.com/ckcrlyf
