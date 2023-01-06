@@ -29,12 +29,22 @@ github_username:  ckcr4lyf
 
 # Build settings
 #theme: midnight
-theme: minima
+# theme: minima
+theme: no-style-please
 plugins:
   - jekyll-feed
 
 minima:
   skin: dark
+
+theme_config:
+  appearance: "auto" # can be "light", "dark" or "auto"
+  back_home_text: ".." # customize text for homepage link in post layout
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: false # show blog description in home page
+
+sass:
+  style: compressed  
 
 # Exclude from processing.
 # The following items will not be processed, by default.
