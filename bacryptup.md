@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /bacryptup/
+title: bacryptup
 ---
 
 ## Bacryptup

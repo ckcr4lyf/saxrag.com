@@ -3,3 +3,6 @@ static:
 
 watch:
 	bundle exec jekyll build --watch
+
+serve:
+	bundle exec jekyll serve

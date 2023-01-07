@@ -22,20 +22,28 @@ title: saxrag
 email: poiasdpoiasd@live.com
 description: >- # this means to ignore newlines until "baseurl:"
   Overview of some of the awesome stuff I've made, and my opinions on technology. Also cocktails.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://saxrag.com/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: yeksUHDEE
 github_username:  ckcr4lyf
 
 # Build settings
 #theme: midnight
-theme: minima
+# theme: minima
+theme: no-style-please
+
+theme_config:
+  appearance: "light" # can be "light", "dark" or "auto"
+  back_home_text: ".." # customize text for homepage link in post layout
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: false # show blog description in home page
+
+sass:
+  style: :compressed
+
 plugins:
   - jekyll-feed
-
-minima:
-  skin: dark
-
+  - jekyll-seo-tag
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
