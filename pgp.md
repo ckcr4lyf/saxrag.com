@@ -39,8 +39,14 @@ To explain how they work, we imagine a scenario where Alice (the sender) wants t
 
 The actual signing and verification processes are mathematical operations, but basically a valid signature tells Bob that "whomever sent this message holds Alice's private key". It is Alice's duty to keep her private key, well, private. If she prepares the signed message on her own computer, then she could send it over any channel - Email, Twitter, Instagram or Reddit, while allowing Bob (or anyone else) to guarantee the message really came from her.
 
+### Encryption
+
+Bob would also have a keypair. If Alice has Bob's public key, she can encrypt the message such that only Bob can decrypt it. This helps guarantee that no one in the middle can see it (e.g. Google, Meta).
+
 ## The Key Exchange Problem
 
 The keys mentioned above are usually either very large numbers (e.g. when using RSA), or points on an elliptic curve (e.g. when using ECDSA). Alice needs to generate her keys on her own computer, which is simple. However, for Bob to verify Alice's signature, he needs to get her public key. 
 
-This poses a problem - how does Alice send the key to Bob? Since Bob doesn't have her public key yet, he cannot trust a message sent over anyy channel. One of the ways is to send it over an insecure channel anyway, but then to _compare it in real life_. For this, Alice & Bob would meet up and confirm that Bob received the correct key, without any tampering.
+This poses a problem - how does Alice send the key to Bob? Since Bob doesn't have her public key yet, he cannot trust a message sent over any channel. One of the ways is to send it over an insecure channel anyway, but then to _compare it in real life_. For this, Alice & Bob would meet up and confirm that Bob received the correct key, without any tampering.
+
+
