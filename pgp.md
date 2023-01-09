@@ -45,8 +45,8 @@ Bob would also have a keypair. If Alice has Bob's public key, she can encrypt th
 
 ## The Key Exchange Problem
 
-The keys mentioned above are usually either very large numbers (e.g. when using RSA), or points on an elliptic curve (e.g. when using ECDSA). Alice needs to generate her keys on her own computer, which is simple. However, for Bob to verify Alice's signature, he needs to get her public key. 
+The keys mentioned above are usually either very large numbers (e.g. when using RSA), or points on an elliptic curve (e.g. when using ECDSA). Alice needs to generate her keys (the public/private keypair) on her own computer, which is simple. However, for Bob to verify Alice's signature, he needs to get her public key. 
 
-This poses a problem - how does Alice send the key to Bob? Since Bob doesn't have her public key yet, he cannot trust a message sent over any channel. One of the ways is to send it over an insecure channel anyway, but then to _compare it in real life_. For this, Alice & Bob would meet up and confirm that Bob received the correct key, without any tampering.
+This poses a problem - how does Alice send the public key she generated to Bob? Since Bob doesn't have her public key yet, he cannot trust a message sent over any channel. One of the ways is to send it over an insecure channel anyway, but then to _compare it in real life_. For this, Alice & Bob would meet up and confirm that Bob received the correct key, without any tampering.
 
 
