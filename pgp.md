@@ -35,7 +35,7 @@ This is exactly what happened in 2020, when over a 100 high profile accounts wer
 Digital signatures are a tool that can help us verify the identity of a message's sender. The term "signature" is used as it is similar to how people would sign on documents or cheques as a way to "confirm" that it was really them - they authorized the transaction. However, unlike pen-and-paper signatures, digital signatures are extremely difficult to forge.
 
 
-To explain how they work, we imagine a scenario where Alice (the sender) wants to send a message to Bob (the recipient). Alice has a pair of keys - a private key, which she keeps secret, and a public key, which she gives to Bob. Alice can then use her private key to "sign" the message, producing a digital signature. When bob receives the signed message, he can verify the signature using the Alice's public key. 
+To explain how they work, we imagine a scenario where Alice (the sender) wants to send a message to Bob (the recipient). Alice has a pair of keys - a private key, which she keeps secret, and a public key, which she gives to Bob. Both these keys are generated together, and can be performed completely offline on Alice's computer using open source software such as [GnuPG](https://www.gnupg.org/). Thus, there is no need to rely on third party services. Alice can then use her private key to "sign" the message, producing a digital signature. When bob receives the signed message, he can verify the signature using the Alice's public key. 
 
 The actual signing and verification processes are mathematical operations, but basically a valid signature tells Bob that "whomever sent this message holds Alice's private key". It is Alice's duty to keep her private key, well, private. If she prepares the signed message on her own computer, then she could send it over any channel - Email, Twitter, Instagram or Reddit, while allowing Bob (or anyone else) to guarantee the message really came from her.
 
@@ -45,8 +45,6 @@ Bob would also have a keypair. If Alice has Bob's public key, she can encrypt th
 
 ## The Key Exchange Problem
 
-The keys mentioned above are usually either very large numbers (e.g. when using RSA), or points on an elliptic curve (e.g. when using ECDSA). Alice needs to generate her keys on her own computer, which is simple. However, for Bob to verify Alice's signature, he needs to get her public key. 
+The keys mentioned above are usually either very large numbers (e.g. when using RSA), or points on an elliptic curve (e.g. when using ECDSA). Recall that Alice needs to generate her keys (the public/private keypair) on her own computer, which is simple. However, for Bob to verify Alice's signature, he needs to get her public key. 
 
-This poses a problem - how does Alice send the key to Bob? Since Bob doesn't have her public key yet, he cannot trust a message sent over any channel. One of the ways is to send it over an insecure channel anyway, but then to _compare it in real life_. For this, Alice & Bob would meet up and confirm that Bob received the correct key, without any tampering.
-
-
+This poses a problem - how does Alice send the public key she generated to Bob? Since Bob doesn't have her public key yet, he cannot trust a message sent over any channel. One of the ways is to send it over an insecure channel anyway, but then to _compare it in real life_. For this, Alice & Bob would meet up and confirm that Bob received the correct key, without any tampering.
