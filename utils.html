@@ -1,0 +1,16 @@
+<script>
+    function percentEncode(){
+        const hex = document.querySelector('#hex').value;
+        let pEnc = '';
+        for (let i = 0; i < hex.length; i += 2){
+            pEnc += `%${hex.substring(i, i+2)}`;
+        }
+        document.querySelector('#penc').value = pEnc;
+    }
+</script>
+
+<body>
+    <input type="text" id="hex"> <br />
+    <input type="text" id="penc">
+    <button onclick="percentEncode()">Do the thing</button>
+</body>
