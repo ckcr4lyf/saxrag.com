@@ -12,9 +12,9 @@ Communicating online, has two main issues surrounding privacy & identity:
 * Making sure no one else other than the intended recipient can read the contents of the message
 * Ensuring that a message is really from whom it claims to be from
 
-PGP is a system to help guarantee either one or both of the above. 
+PGP is a system to help perform these two tasks. In this post, we will focus mostly on issues regarding the identity of a sender and confirming it's legitimacy. Ensuring no one else can _read_ the message is out of scope. 
 
-In this post, we will focus mostly on issues regarding the identity of a sender and confirming their authenticity. Ensuring no one else can _read_ the message is out of scope. By the end, I will provide you with an opportunity to get a free beer!
+By the end, I will provide you with an opportunity to get a free beer!
 
 ## The problem with messaging services
 
@@ -41,7 +41,7 @@ To explain how they work, we imagine a scenario where **Alice (the sender)** wan
 
 The actual signing and verification processes are mathematical operations, but basically a valid signature tells Bob that "whomever sent this message knows Alice's private key, since they were able to generate a valid signature". It is Alice's duty to keep her private key, well, private. Once she signs the message on her own computer, she could send it over any channel - Email, Twitter, Instagram or Reddit, while allowing Bob (or anyone else) to guarantee the message really came from her.
 
-P.S. If you want to see some examples of digital signatures, I've included them at the end!
+P.S. If you want to see some examples of digital signatures, [I've included them at the end!](#signing--verification-in-action)
 
 
 ## The Key Exchange Problem
