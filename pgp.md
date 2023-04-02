@@ -57,7 +57,7 @@ A common compromise is to exchange keys digitally anyway, for instance via E-Mai
 
 ### Free Beer
 
-If you're interested in PGP, and want to exchange keys with me IRL, I would be more than happy to try and arrange such a meeting. Please <a href="mailto:poiasdpoiasd@live.com">contact me via email</a>, and [use my PGP key](/assets/pgp/Raghu_Saxena_poiasdpoiasd@live.com_0xA1E21ED06A67D28A.asc) to encrypt & sign the email. (But don't mark it as verified yet!)
+If you're interested in PGP, and want to exchange keys with me IRL, I would be more than happy to try and arrange such a meeting. Please <a href="mailto:poiasdpoiasd@live.com">contact me via email</a>, and [use my PGP key](/assets/pgp/Raghu_Saxena_poiasdpoiasd@live.com_0xA1E21ED06A67D28A.asc) to encrypt & sign the email (but don't mark it as verified yet!). On a successful key exchange, I'll buy you a beer!
 
 ## Appendix
 
