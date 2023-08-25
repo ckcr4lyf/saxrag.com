@@ -1,0 +1,19 @@
+<h1> Conver Hex String to Rust Constant </h1>
+
+<script>
+    function percentEncode(){
+        const hex = document.querySelector('#hex').value;
+        let elements = [];
+        for (let i = 0; i < hex.length; i += 2){
+            elements.push(parseInt(hex.substring(i, i+2), 16));
+        }
+        const final = `let packet: [u8; ${elements.length}] = ${JSON.stringify(elements)};`;
+        document.querySelector('#penc').value = final;
+    }
+</script>
+
+<body>
+    <input type="text" id="hex"> <br />
+    <input type="text" id="penc">
+    <button onclick="percentEncode()">Do the thing</button>
+</body>
