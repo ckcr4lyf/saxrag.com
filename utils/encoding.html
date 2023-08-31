@@ -1,0 +1,56 @@
+<h1> Encoding Utils </h1>
+
+<script>
+    function getCrop(cropval) {
+        if (cropval === '') {
+            return '';
+        }
+
+        return `-vf crop=${cropval}`;
+    }
+
+    function command() {
+        const filename = document.querySelector('#filename').value;
+        const bitrate = document.querySelector('#bitrate').value;
+        const crop = document.querySelector('#crop').value;
+
+        const command = `ffmpeg -hide_banner -y -i ${filename} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=1:qcomp=0.65 -preset slow -an -f matroska /dev/null && \\\n` +
+            `ffmpeg -hide_banner -y -i ${filename} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=1:qcomp=0.65 -preset slow -map 0:a:0 -c:a:0 ac3 -b:a:0 640k`;
+
+        document.querySelector('#command').value = command;
+
+    }
+</script>
+
+<body>
+    <table>
+        <tr>
+            <td>File name</td>
+            <td><input type="text" id="filename"></td>
+        </tr>
+        <tr>
+            <td>Video Bitrate</td>
+            <td><input type="text" id="bitrate"></td>
+        </tr>
+        <tr>
+            <td>Crop (e.g. 1920:1040:0:20)</td>
+            <td><input type="text" id="crop"></td>
+        </tr>
+    </table>
+
+    <button onclick="command()">Prepare Command</button>
+
+    <hr />
+
+    <textarea id="command" cols="200"></textarea>
+
+    <hr />
+
+    <h2>Tips</h2>
+
+    <div>
+        <h3>Cropdetect</h3>
+        You can use the following command to cropdetect: <br />
+        <tt>ffmpeg -i Filename.mkv -vf cropdetect,metadata=mode=print -f null -</tt>
+    </div>
+</body>
