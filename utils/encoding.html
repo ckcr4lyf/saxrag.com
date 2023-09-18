@@ -15,7 +15,7 @@
         const crop = document.querySelector('#crop').value;
 
         const command = `ffmpeg -hide_banner -y -i ${filename} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=1:qcomp=0.65 -preset slow -an -f matroska /dev/null && \\\n` +
-            `ffmpeg -hide_banner -y -i ${filename} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=2:qcomp=0.65 -preset slow -map 0:a:0 -c:a:0 ac3 -b:a:0 640k`;
+            `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=2:qcomp=0.65 -preset slow -map 0:a:0 -c:a:0 ac3 -b:a:0 640k`;
 
         document.querySelector('#command').value = command;
 
