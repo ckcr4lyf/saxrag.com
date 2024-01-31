@@ -30,3 +30,6 @@ end
 gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 gem "no-style-please"
+gem "webrick", "~> 1.7"
+
+gem "json", "~> 2.7"
