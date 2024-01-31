@@ -5,7 +5,7 @@ title: Home
 
 ### About
 
-I am a 1337 coder who enjoys server side technologies, encryption and privacy. I also love networking (The TCP/IP kind) and writing software revolving around such stuff.
+I am a developer who enjoys server side technologies, encryption and privacy. I also love networking (The TCP/IP kind) and writing software revolving around such stuff.
 
 
 [qbit-race](https://github.com/ckcr4lyf/qbit-race) is a utility I wrote around managing torrents, sending notifications and configuring rules to extract the maximum "racing" performance out of qBittorrent. Loved by members of the seedboxing community, it's one of my projects I am most proud of.
@@ -14,7 +14,7 @@ I am a 1337 coder who enjoys server side technologies, encryption and privacy. I
 
 [torrent-stats](https://github.com/ckcr4lyf/torrent-stats) is one of my first "real programs" that I wrote in C/C++, which utilizes C sockets to query UDP bittorrent trackers and C++ threads to parallelize the job, fetching a list of IPs that are sharing a particular torrent.  (soon to be oxidized???)
 
-[Bacryptup](https://bacryptup.saxrag.com/) is an end-to-end encrypted filesharing service I developed. The server never knows the file contents, and it offers a secure way share sensitive data. You can read more about it [here](/bacryptup)
+[stdinman](https://github.com/ckcr4lyf/stdinman) is a small tool I wrote to stream arbitrary audio from stdin to Discord via a bot, with the initial goal to play my Vinyl for my friends.
 
 
 ### Experience
