@@ -55,6 +55,12 @@ Even though I don't smoke, I ended up purchasing some Russian and North Korea ci
 
 The bus stopped along a few places along some points of interest, where people got off to take some photos. The first truly interest stop (at least for me) was at one of the bridges connecting China to North Korea. This was one of the first stops where my passport limited me - the Chinese citizens were allowed to go into the port area and all the way upto the mid-point on the bridge, whereas I had to stay behind where the bus was parked.
 
+![Entrance to the bridge to North Korea](https://assets.saxrag.com/hunchun/bridge_entrance.jpg)
+_Entrance to the bridge to North Korea. I was not allowed in._
+
+![Trucks lined up to go to North Korea](https://assets.saxrag.com/hunchun/truck_line.jpg)
+_Trucks lined up to go to North Korea, presumably carrying some goods._
+
 // TODO: Photos of the port, trucks lined up for NK. Anything else?
 
 As I was taking photos of the trucks and the general area, one of the border control guards (Military? Not sure of the right term) must've found me suspicious and came up to question me. A few more of his colleagues followed. He tried to question me a bit in some broken English, and then asked for my passport. Unofrtunately when flipping through he only managed to find my Chinese visa from 2019, which was single entry (and long expired). Thankfully he let me flip it to the right page with the current, valid visa. One interesting thing was that he took photos of several pages of my passport, but seemingly only ones which has some kinda stamps or visas which included Chinese characters. So he took photos of my (old) Hong Kong visa, my Taiwan (!) immigration stamps, and even my Japanese Visa - which is where I got the Chinese character theory from - since he skipped my UK & Norwegian Visas (among other stamps).
