@@ -49,19 +49,30 @@ As I mentioned earlier, everyone else in the bus was fresh from the railway stat
 
 Our first stop was at some large Museum area, focused on Chinese history of the area. We only stopped for ~15 minutes, mostly for a souvenir store - not nearly enough time to check out the Museum anyway.
 
-The store has a lot of Russian and North Korean goods for sale. There were definitely some _interesting_ items available:
+The store has a lot of Russian and North Korean goods for sale. There were definitely some _interesting_ items available.
+
+![CCCP Americas](https://assets.saxrag.com/hunchun/americas.jpg){: height="500" }
+_Some kind of watter bottle_
 
 Even though I don't smoke, I ended up purchasing some Russian and North Korea cigarettes. The Russian pack looked kinda cool with the Cyrillic alphabet, while the shopkeeper claimed the the North Korean cigarettes were the ones that Kim Jong Un smokes - supposedly smuggled out of North Korea.
 
+![Cigarettes](https://assets.saxrag.com/hunchun/cigarettes.jpg){: height="500" }
+_The afformentioned cigarettes_
+
 The bus stopped along a few places along some points of interest, where people got off to take some photos. The first truly interest stop (at least for me) was at one of the bridges connecting China to North Korea. This was one of the first stops where my passport limited me - the Chinese citizens were allowed to go into the port area and all the way upto the mid-point on the bridge, whereas I had to stay behind where the bus was parked.
 
-![Entrance to the bridge to North Korea](https://assets.saxrag.com/hunchun/bridge_entrance.jpg)
-_Entrance to the bridge to North Korea. I was not allowed in._
-
-![Trucks lined up to go to North Korea](https://assets.saxrag.com/hunchun/truck_line.jpg)
-_Trucks lined up to go to North Korea, presumably carrying some goods._
-
-// TODO: Photos of the port, trucks lined up for NK. Anything else?
+<table>
+<tr>
+<td>
+<img src="https://assets.saxrag.com/hunchun/bridge_entrance.jpg">
+<em>Entrance to the bridge to North Korea. I was not allowed in.</em>
+</td>
+<td>
+<img src="https://assets.saxrag.com/hunchun/truck_line.jpg">
+<em>Trucks lined up to go to North Korea, presumably carrying some goods.</em>
+</td>
+</tr>
+</table>
 
 As I was taking photos of the trucks and the general area, one of the border control guards (Military? Not sure of the right term) must've found me suspicious and came up to question me. A few more of his colleagues followed. He tried to question me a bit in some broken English, and then asked for my passport. Unofrtunately when flipping through he only managed to find my Chinese visa from 2019, which was single entry (and long expired). Thankfully he let me flip it to the right page with the current, valid visa. One interesting thing was that he took photos of several pages of my passport, but seemingly only ones which has some kinda stamps or visas which included Chinese characters. So he took photos of my (old) Hong Kong visa, my Taiwan (!) immigration stamps, and even my Japanese Visa - which is where I got the Chinese character theory from - since he skipped my UK & Norwegian Visas (among other stamps).
 
@@ -69,4 +80,11 @@ I was able to point to the tour bus, which has some relevant branding on the sid
 
 Shortly after that little incident, the rest of the group returned, and we continued on towards the tower. After getting there, I once again had to get off, while everyone else carried on through the security checkpoint, to the physical border with Russia. (Note: I am not sure exactly how far along the bus went - and whether they went into Russia. I should've asked them but I thought that would make me seem even more suspicious). This was actually kinda nice, because I got to visit the tower area while it was quite empty, including going to the typical photo spots without any queue.
 
-It's a petty impressive and massive tower, and from what I can tell, it is built purely for tourism - the tower does not serve any military purpose (at least none that I can tell).
+![Bus leaving me behind](https://assets.saxrag.com/hunchun/bus_leave.jpg){: height="500" }
+_The bus leaves me behind to continue on to the Russian border_
+
+It's a petty impressive and massive tower, and from what I can tell, it is built purely for tourism - the tower does not serve any military purpose (at least none that I can tell). THere is an elevator to take you straight up to the top, from where there are pretty impressive views of North Korea, and using a pair of binoculars it is possible to spot a few buildings, but not much else.
+
+I was also able to see the Tumagang bridge, which is the only land connection between Russia and North Korea. The bridge has a railway, which is used to transport goods between the two countries. The Russian side visible from the tower was mostly just barren land, didn't seem to be much going on.
+
+After spending about 15 minutes at the top just looking around and stuff (and buying a fridge magnet), I decided to head back down. THere is a museum somewhere in the middle of the tower as well, though I wasn't too interested. After waiting for the rest of thr group to turn up, we began our uneventful journey back. Everyone seemed a bit tired, and I don't blame them considering they even had an early morning train rice into Hunchun. The bus dropped everyone (except me) off at the railway station so they could head back, while I rode back to the tour gr
