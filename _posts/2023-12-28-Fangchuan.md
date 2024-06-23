@@ -102,19 +102,7 @@ From here, I just kinda went in and asked about the "Fangchuan bus". A little lo
 
 As I mentioned earlier, everyone else in the bus was fresh from the railway station, just in for a day trip. Thankfully, there was a very helpful girl from Hubei province in front of me who spoke English, and helped translate some of the things the bus driver was telling us - pointing out areas of interest along the border as we drove.
 
-Our first stop was at some large Museum area, focused on Chinese history of the area. We only stopped for ~15 minutes, mostly for a souvenir store - not nearly enough time to check out the Museum anyway.
-
-The store has a lot of Russian and North Korean goods for sale. There were definitely some _interesting_ items available.
-
-![CCCP Americas](https://assets.saxrag.com/hunchun/americas.jpg){: height="500" }
-_Some kind of watter bottle_
-
-Even though I don't smoke, I ended up purchasing some Russian and North Korea cigarettes. The Russian pack looked kinda cool with the Cyrillic alphabet, while the shopkeeper claimed the the North Korean cigarettes were the ones that Kim Jong Un smokes - supposedly smuggled out of North Korea.
-
-![Cigarettes](https://assets.saxrag.com/hunchun/cigarettes.jpg){: height="500" }
-_The afformentioned cigarettes_
-
-The bus stopped along a few places along some points of interest, where people got off to take some photos. The first truly interest stop (at least for me) was at one of the bridges connecting China to North Korea. This was one of the first stops where my passport limited me - the Chinese citizens were allowed to go into the port area and all the way upto the mid-point on the bridge, whereas I had to stay behind where the bus was parked.
+Our first stop was at one of the bridges connecting China to North Korea. This was one of the places where my passport limited me - the Chinese citizens were allowed to go into the port area and all the way upto the mid-point on the bridge, whereas I had to stay behind where the bus was parked.
 
 <table>
 <tr>
@@ -131,12 +119,24 @@ The bus stopped along a few places along some points of interest, where people g
 
 As I was taking photos of the trucks and the general area, one of the border control guards (Military? Not sure of the right term) must've found me suspicious and came up to question me. A few more of his colleagues followed. He tried to question me a bit in some broken English, and then asked for my passport. Unfortunately when flipping through he only managed to find my Chinese visa from 2019, which was meant for a single entry (and long expired). Thankfully he let me flip it to the right page with the current, valid visa. One interesting thing was that he took photos of several pages of my passport, but seemingly only ones which has some kinda stamps or visas which included Chinese characters. So he took photos of my (old) Hong Kong visa, my Taiwan (!) immigration stamps, and even my Japanese Visa - which is where I got the Chinese character theory from - since he skipped my UK & Norwegian Visas (among other stamps).
 
-I was able to point to the tour bus, which has some relevant branding on the side, from which I think he understood that I had come along with a group for sightseeing, and was just left behind since I am not allowed on the bridge to North Korea. At least that's what I assume - for all I know I am now registered as an Indian spy in their database (I promise I'm not).
+I was able to point to the tour bus, which has some relevant branding on the side, from which I think he understood that I had come along with a group for sightseeing, and was just left behind since I am not allowed on the bridge to North Korea. At least that's what I assume - for all I know I am now registered as an Indian spy in their database (I promise I'm not one).
 
 ![Stuff not allowed](https://assets.saxrag.com/hunchun/not_allowed.jpg){: height="500" }
 _A warning of all the stuff not allowed_
 
-Shortly after that little incident, the rest of the group returned, and we continued on towards the tower. After getting there, I once again had to get off, while everyone else carried on through the security checkpoint, to the physical border with Russia. (Note: I am not sure exactly how far along the bus went - and whether they went into Russia. I should've asked them but I thought that would make me seem even more suspicious). This was actually kinda nice, because I got to visit the tower area while it was quite empty, including going to the typical photo spots without any queue.
+Shortly after that little incident, the rest of the group returned, and we continued on. We next stopped at some large Museum area, focused on Chinese history of the area. We only stopped for ~15 minutes, mostly for a souvenir store - not nearly enough time to check out the Museum anyway.
+
+The store has a lot of Russian and North Korean goods for sale. There were definitely some _interesting_ items available.
+
+![CCCP Americas](https://assets.saxrag.com/hunchun/americas.jpg){: height="500" }
+_Some kind of watter bottle_
+
+Even though I don't smoke, I ended up purchasing some Russian and North Korea cigarettes. The Russian pack looked kinda cool with the Cyrillic alphabet, while the shopkeeper claimed the the North Korean cigarettes were the ones that Kim Jong Un smokes - supposedly smuggled out of North Korea.
+
+![Cigarettes](https://assets.saxrag.com/hunchun/cigarettes.jpg){: height="500" }
+_The afformentioned cigarettes_
+
+We then carried on towards the viewing tower. After getting there, I once again had to get off, while everyone else carried on through the security checkpoint, to the physical border with Russia. (Note: I am not sure exactly how far along the bus went - and whether they went into Russia. I should've asked them but I thought that would make me seem even more suspicious). This was actually kinda nice, because I got to visit the tower area while it was quite empty, including going to the typical photo spots without any queue.
 
 ![Bus leaving me behind](https://assets.saxrag.com/hunchun/bus_leave.jpg){: height="500" }
 _The bus leaves me behind to continue on to the Russian border_
@@ -164,7 +164,7 @@ _North Korea across the Tumen River_
 
 ![Zoomed in on the Friendship Bridge](https://assets.saxrag.com/hunchun/bridge.jpg)
 
-After spending about 15 minutes at the top just looking around and stuff (and buying a fridge magnet), I decided to head back down. There is a museum somewhere in the middle of the tower as well, though I wasn't too interested. After waiting for the rest of thr group to turn up, we began our uneventful journey back. Everyone seemed a bit tired, and I don't blame them considering they even had an early morning train rice into Hunchun. The bus dropped everyone (except me) off at the railway station so they could head back, while I rode back to the tour group's hub in the middle of town.
+After spending about 15 minutes at the top just looking around and stuff (and buying a fridge magnet), I decided to head back down. There is a museum somewhere in the middle of the tower as well, though I wasn't too interested. After waiting for the rest of the group to turn up, we began our uneventful journey back. Everyone seemed a bit tired, and I don't blame them considering they even had an early morning train rice into Hunchun. The bus dropped everyone (except me) off at the railway station so they could head back, while I rode back to the tour group's hub in the middle of town.
 
 ![Bus on road](https://assets.saxrag.com/hunchun/bus_road.jpg){: height="500" }
 _Driving back on the wide, empty roads_
@@ -174,7 +174,7 @@ The rest of the day was spent exploring Hunchun despite me being tired and the t
 ![Pink Panther](https://assets.saxrag.com/hunchun/pp.jpg){: height="500" }
 _Some Pink Panther thingy in the mall_
 
-After drinking at a few spots around the town, and singing some Faye Wong at the bars, I headed back to my hotel for the 8 hour train ride to Beijing next morning. Hunchun was a super fun city to visit, especially since it is so remote. A great mix of Russian, Chinese and Korean culture, with friendly people that are super welcoming. And of course, the proximity to Russia and North Korea is what also makes it so interesting. I'd definitely recommend visiting it if you're a bit adventurous, and doing so during the winter is even cooler!
+After drinking at a few spots around the town, and singing some of Faye Wong's songs at the bars, I headed back to my hotel for the 8 hour train ride to Beijing next morning. Hunchun was a super fun city to visit, especially since it is so remote. A great mix of Russian, Chinese and Korean culture, with friendly people that are super welcoming. And of course, the proximity to Russia and North Korea is what also makes it so interesting. I'd definitely recommend visiting it if you're a bit adventurous, and doing so during the winter is even cooler!
 
 <table>
 <tr>
