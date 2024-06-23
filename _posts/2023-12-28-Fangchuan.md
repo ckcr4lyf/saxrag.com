@@ -18,7 +18,7 @@ div.highlighter-rouge code {
 
 The main goal of my 2023 winter trip to China was to visit the Fanchuan Scenic Area - which is where the borders of China, Russia & North Korea meet. I've always had a surface-level curiosity about borders in general, and found this particular tri-point when playing around on Google Maps. It was especially interesting that it involved, what the "west" seems to consider as three of the most "dangerous" countries, geopolitically.
 
-I came into Hunchun via a train from Harbin, which took ~4 hours. Along the train ride, I went past quite close to the North Korean border, and at points was able to look across as well, to mostly barren land.
+I came into Hunchun via a train from Harbin, which took ~4 hours. The train went past quite close to the North Korean border, thought it just looked like barrenm, empty land and mountains - though it was winter with temperatures below zero.
 
 Hunchun is a small "city" , with everything spread wide but within a relatively small geographic area. I was staying at a branch of the Donglong hotel, which seemed very newly built and quite nice. 
 
@@ -83,7 +83,7 @@ The Chinese People's Liberation Army 32116 troops announced
 Report hotline:7654010 ★★
 ```
 
-This seemed a lot more serious, and so I decided its probably best not to continue: though the barbed wire fence has a gate which was completely open and looked very inviting - especially since the slope meant I had no idea what was on the other side (military with shoot on sight orders???).
+This seemed a lot more serious, and so I decided its probably best not to continue, though the barbed wire fence has a gate which was completely open and looked very inviting, especially since the slope meant I had no idea what was on the other side (military with shoot on sight orders???).
 
 ![Open Gate](https://assets.saxrag.com/hunchun/open_gate.jpg)
 _Wonder whats on the other side..._
@@ -98,7 +98,7 @@ When it comes to visiting the Fangchuan Scenic Area (aka the tri-border point), 
 ![The Tour Group Transport Hub](https://assets.saxrag.com/20231229_151205.JPG){: height="500" }
 _The tour bus group's main hub, I think_
 
-From here, I just kinda went in and asked about the "Fangchuan bus". A little lost in translation, but they got the general idea. However, I don't think they were used to foreigners. They asked which country I'm from, and when I said India, they tried to figure out if it was safe to take me. I should clarify - "safety" here meant would they get in trouble for taking a foreigner to this border area, which could potentially be against some kind of national security law or whatever. At least that's what it seemed like. After the guy made a few calls, he confirmed that yes, I could go in the tour bus, but only to the viewing tower, not the actual border, which was a win in my book.
+From here, I just kinda went in and asked about the "Fangchuan bus". A little lost in translation, but they got the general idea. However, I don't think they were used to foreigners. They asked which country I'm from, and when I said India, they tried to figure out if it was safe to take me. I should clarify - "safety" here meant whether they would get in trouble for taking a foreigner to this border area, which could potentially be against some kind of national security law or whatever. At least that's what it seemed like. After the guy made a few calls, he confirmed that yes, I could go in the tour bus, but only to the viewing tower, not the actual border. This was a win in my book.
 
 As I mentioned earlier, everyone else in the bus was fresh from the railway station, just in for a day trip. Thankfully, there was a very helpful girl from Hubei province in front of me who spoke English, and helped translate some of the things the bus driver was telling us - pointing out areas of interest along the border as we drove.
 
