@@ -14,6 +14,20 @@ table, th, tr, td {
 div.highlighter-rouge code {
     white-space: pre;
 }
+
+.image-row {
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.image-row figure {
+  margin: 0;
+}
+
+.image-row figure > img {
+  width: 100%;
+}
 </style>
 
 The main goal of my 2023 winter trip to China was to visit the Fanchuan Scenic Area - which is where the borders of China, Russia & North Korea meet. I've always had a surface-level curiosity about borders in general, and found this particular tri-point when playing around on Google Maps. It was especially interesting that it involved, what the "west" seems to consider as three of the most "dangerous" countries, geopolitically.
@@ -104,18 +118,16 @@ As I mentioned earlier, everyone else in the bus was fresh from the railway stat
 
 Our first stop was at one of the bridges connecting China to North Korea. This was one of the places where my passport limited me - the Chinese citizens were allowed to go into the port area and all the way upto the mid-point on the bridge, whereas I had to stay behind where the bus was parked.
 
-<table>
-<tr>
-<td>
-<img src="https://assets.saxrag.com/hunchun/bridge_entrance.jpg">
-<em>Entrance to the bridge to North Korea. I was not allowed in.</em>
-</td>
-<td>
-<img src="https://assets.saxrag.com/hunchun/truck_line.jpg">
-<em>Trucks lined up to go to North Korea, presumably carrying some goods.</em>
-</td>
-</tr>
-</table>
+<div class="image-row">
+  <figure>
+    <img src="https://assets.saxrag.com/hunchun/bridge_entrance.jpg" />
+    <figcaption>Entrance to the bridge to North Korea. I was not allowed in.</figcaption>
+  </figure>
+  <figure>
+    <img src="https://assets.saxrag.com/hunchun/truck_line.jpg" />
+    <figcaption>Trucks lined up to go to North Korea, presumably carrying some goods.</figcaption>
+  </figure>
+</div>
 
 As I was taking photos of the trucks and the general area, one of the border control guards (Military? Not sure of the right term) must've found me suspicious and came up to question me. A few more of his colleagues followed. He tried to question me a bit in some broken English, and then asked for my passport. Unfortunately when flipping through he only managed to find my Chinese visa from 2019, which was meant for a single entry (and long expired). Thankfully he let me flip it to the right page with the current, valid visa. One interesting thing was that he took photos of several pages of my passport, but seemingly only ones which has some kinda stamps or visas which included Chinese characters. So he took photos of my (old) Hong Kong visa, my Taiwan (!) immigration stamps, and even my Japanese Visa - which is where I got the Chinese character theory from - since he skipped my UK & Norwegian Visas (among other stamps).
 
