@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Cutter</title>
+    <script>
+        function cutCookies(){
+            const originalCookies = document.querySelector('#cookie-string').value.split(';').map(el => el.trim());
+            const cookiesToCut = document.querySelector('#exclude').value.split(',')
+
+            const newCookies = [];
+            for (const cookie of originalCookies){
+                if (cookiesToCut.some(cookieName => cookie.startsWith(cookieName))){
+                    continue;
+                }
+
+                newCookies.push(cookie);
+            }
+
+            const finalCookies = newCookies.join('; ');
+            document.querySelector('#cookie-cut').value = finalCookies;
+        }
+    </script>
+</head>
+<body>
+    <h3>Used to quickly exclude cookies from a cURL-like cookie string</h3>
+
+    <textarea name="cookie-string" id="cookie-string" style="width: 70%; height: 200px;"></textarea><br /><br />
+    <label>cookies to exclude: </label><input type="text" name="exclude" id="exclude" style="width: 70%"></input><br />
+    <button type="submit" onclick="cutCookies()">Cut Cookies</button><br /><br />
+    <textarea name="cookie-cut" id="cookie-cut" style="width: 70%; height: 200px;"></textarea><br /><br />
+</body>
+</html>
