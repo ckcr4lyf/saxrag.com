@@ -8,6 +8,42 @@ const data = [
         subcategory: 'Regular HKD Spending',
         pointsPerDollar: 3,
         pointsPerMile: AMEX_POINTS_PER_MILE,
+    },
+    {
+        cardName: 'AMEX Explorer',
+        subcategory: '5X Merchants',
+        pointsPerDollar: 5,
+        pointsPerMile: AMEX_POINTS_PER_MILE,
+    },
+    {
+        cardName: 'AMEX Explorer',
+        subcategory: 'FX Transactions',
+        pointsPerDollar: 10.75,
+        pointsPerMile: AMEX_POINTS_PER_MILE,
+    },
+    {
+        cardName: 'HSBC Red',
+        subcategory: 'Online Transactions',
+        pointsPerDollar: 0.04,
+        pointsPerMile: HSBC_RC_PER_MILE_REGULAR,
+    },
+    {
+        cardName: 'HSBC Visa Signature',
+        subcategory: 'RHRYC',
+        pointsPerDollar: 0.036,
+        pointsPerMile: HSBC_RC_PER_MILE_REGULAR,
+    },
+    {
+        cardName: 'HSBC Cards (except EveryMile)',
+        subcategory: 'Regular HKD Spending',
+        pointsPerDollar: 0.004,
+        pointsPerMile: HSBC_RC_PER_MILE_REGULAR,
+    },
+    {
+        cardName: 'HSBC EveryMile',
+        subcategory: 'Regular HKD Spending',
+        pointsPerDollar: 0.01,
+        pointsPerMile: HSBC_RC_PER_MILE_EVERYMILE,
     }
 ];
 
@@ -37,11 +73,11 @@ const renderTable = () => {
         row.appendChild(td);
 
         td = document.createElement('td');
-        td.innerText = card.dollarsPerMile;
+        td.innerText = card.dollarsPerMile.toFixed(2);
         row.appendChild(td);
 
         td = document.createElement('td');
-        td.innerText = "TODO";
+        td.innerText = `${((0.168 / card.dollarsPerMile) * 100).toFixed(2)}%`;
         row.appendChild(td);
 
         // row.append(...[
