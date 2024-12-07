@@ -23,13 +23,27 @@
         td {
             padding: 6px;
         }
+
+        div#inputs {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-right: 4px;
+        }
     </style>
 </head>
-<body onload="renderTable()">
+<body>
     <h1>Effective Cashback</h1>
     <p>I define effective cashback on credit cards, as the % value I get back on spends, compared to the dollar value of how I redeem these rewards.</p>
     <p>The most common way to do so, I've found, is via Asia Miles. Basically if you fly Cathay, you figure out how much it costs (in miles) to redeem the flight, and then compare it to the dollar value of the flight.</p>
     <h2>Calculator</h2>
+    <div id="inputs">
+        <label for="cost">Flight Cost in HK$</label><input type="text" id="cost" value="5000">
+        <label for="miles">Flight Cost in Miles</label><input type="text" id="miles" value="25000">
+        <button onclick="calculate()">Calculate!</button>
+        <label for="value">Value per AsiaMile in HK$</label><input type="text" id="value" disabled>
+    </div>
     <table id="minmax" border="1">
         <tr>
             <th>Card</th>
@@ -37,7 +51,16 @@
             <th>Points per $</th>
             <th>$ per Asia Mile</th>
             <th>Effective Cashback</th>
+            <th>Miscellaneous Comments</th>
         </tr>
     </table>
+    <h2>Other Tips / Notes</h2>
+    <h3>EveryMile vs. Octopus for Cashback</h3>
+    <div>
+        <p>HSBC EveryMile has a preferential rate of HK$2/mile for most public transit (MTR, Buses). However, <a href="https://www.ptfss.gov.hk/en-main.html#/en-sch-01">Octopus also has its own subsidy program.</a></p>
+        <p>The calculation for Octopus as a cashback rate <a href="https://www.desmos.com/calculator/wfxw4pieh8">can be boiled down to these two equations</a>, with limits on x. So depending on how much you use public transit, you might prefer either EveryMile or Octopus</p>
+        <img src="https://assets.saxrag.com/octopus_subsidy_rate.png" alt="Octopus Subsidy Rate">
+
+    </div>
 </body>
 </html>
