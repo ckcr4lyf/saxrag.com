@@ -1,6 +1,9 @@
 const AMEX_POINTS_PER_MILE = 18000 / 1000;
 const HSBC_RC_PER_MILE_REGULAR  = 0.1;
 const HSBC_RC_PER_MILE_EVERYMILE = 0.05;
+const CITI_PRESTIGE_POINTS_PER_MILE = 12;
+const BOCHK_CHEERS_VISA_INFINITE_POINTS_PER_MILE = 15;
+const MOX_MILES_PER_MILE = 1; // Mox doesnt seem to mention points, just HKD$4 = 1 Mile. So we assume HK$1 = 0.25 "Mox Points"
 
 const data = [
     {
@@ -19,10 +22,10 @@ const data = [
     },
     {
         cardName: 'AMEX Explorer',
-        subcategory: 'FX Transactions',
+        subcategory: 'Online Travel & FX Transactions',
         pointsPerDollar: 10.75,
         pointsPerMile: AMEX_POINTS_PER_MILE,
-        comments: 'Limited to HK$10,000 per quarter',
+        comments: 'Limited to HK$10,000 per quarter for Travel & FX separately ($10k each). Online Travel includes several airlines, trip.com etc.',
     },
     {
         cardName: 'HSBC Red',
@@ -56,6 +59,38 @@ const data = [
         pointsPerDollar: 0.025,
         pointsPerMile: HSBC_RC_PER_MILE_EVERYMILE,
         comments: 'Native Octopus might be better value for transit (see below)'
+    },
+    {
+        cardName: 'Citi Prestige',
+        subcategory: 'Local Spending',
+        pointsPerDollar: 2,
+        pointsPerMile: CITI_PRESTIGE_POINTS_PER_MILE,
+        comments: ''
+    },
+    {
+        cardName: 'Citi Prestige',
+        subcategory: 'Overseas Spending',
+        pointsPerDollar: 3,
+        pointsPerMile: CITI_PRESTIGE_POINTS_PER_MILE,
+        comments: ''
+    },
+    /**
+     * - https://www.bochk.com/dam/boccreditcard/cheers_TnC_EN.pdf
+     * - https://www.bochk.com/dam/boccreditcard/cheerscard_360/eng/index.html
+     */
+    {
+        cardName: 'BoC Cheers Visa Infinite',
+        subcategory: 'Dining and FX',
+        pointsPerDollar: 10,
+        pointsPerMile: BOCHK_CHEERS_VISA_INFINITE_POINTS_PER_MILE,
+        comments: 'REQUIRES minimum monthly spend of HK$5000. Dining is capped at HK$10,000/mo (100k points), FX at HK$25,000 (250k points). BUT total points are capped at 300k/mo (20k miles)'
+    },
+    {
+        cardName: 'Mox',
+        subcategory: '',
+        pointsPerDollar: 0.25,
+        pointsPerMile: MOX_MILES_PER_MILE,
+        comments: 'MUST maintain balance of HK$250,000 in Mox Account'
     }
 ];
 
