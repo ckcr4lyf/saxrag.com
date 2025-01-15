@@ -22,10 +22,10 @@ const data = [
     },
     {
         cardName: 'AMEX Explorer',
-        subcategory: 'FX Transactions',
+        subcategory: 'Online Travel & FX Transactions',
         pointsPerDollar: 10.75,
         pointsPerMile: AMEX_POINTS_PER_MILE,
-        comments: 'Limited to HK$10,000 per quarter',
+        comments: 'Limited to HK$10,000 per quarter for Travel & FX separately ($10k each). Online Travel includes several airlines, trip.com etc.',
     },
     {
         cardName: 'HSBC Red',
