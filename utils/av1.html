@@ -1,0 +1,69 @@
+<h1> AV1 Encoding Utils </h1>
+
+<script>
+    function getCrop(cropval) {
+        if (cropval === '') {
+            return '';
+        }
+
+        return `-vf crop=${cropval}`;
+    }
+
+    function getScale(scaleval){
+        if (scaleval === ''){
+            return '';
+        }
+
+        return `-vf "scale=${scaleval}"`;
+    }
+
+    function command() {
+        const filename = document.querySelector('#filename').value;
+        const bitrate = document.querySelector('#bitrate').value;
+        const crop = document.querySelector('#crop').value;
+        const scale = document.querySelector('#scale').value;
+
+        const command = `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 1 --stats ${filename}_stats.log --tune 0 -b ${filename}_out.ivf && \\\n` +
+                        `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 2 --stats ${filename}_stats.log --tune 0 -b ${filename}_out_2.ivf `
+
+        document.querySelector('#command').value = command;
+
+    }
+</script>
+
+<body>
+    <table>
+        <tr>
+            <td>File name</td>
+            <td><input type="text" id="filename"></td>
+        </tr>
+        <tr>
+            <td>Video Bitrate</td>
+            <td><input type="text" id="bitrate"></td>
+        </tr>
+        <tr>
+            <td>Crop (e.g. 1920:1040:0:20) (Optional)</td>
+            <td><input type="text" id="crop"></td>
+        </tr>
+        <tr>
+            <td>Scale (e.g. 1280:720) (Optional)</td>
+            <td><input type="text" id="scale"></td>
+        </tr>
+    </table>
+
+    <button onclick="command()">Prepare Command</button>
+
+    <hr />
+
+    <textarea id="command" cols="200"></textarea>
+
+    <hr />
+
+    <h2>Tips</h2>
+
+    <div>
+        <h3>Cropdetect</h3>
+        You can use the following command to cropdetect: <br />
+        <tt>ffmpeg -i Filename.mkv -vf cropdetect,metadata=mode=print -f null -</tt>
+    </div>
+</body>
