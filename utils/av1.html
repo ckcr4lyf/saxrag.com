@@ -23,8 +23,8 @@
         const crop = document.querySelector('#crop').value;
         const scale = document.querySelector('#scale').value;
 
-        const command = `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 1 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}.ivf && \\\n` +
-                        `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 2 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}_2.ivf `
+        const command = `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 1 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}.ivf && \\\n` +
+                        `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 2 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}_2.ivf `
 
         document.querySelector('#command').value = command;
 
@@ -33,11 +33,12 @@
     function command_x265() {
         const filename = document.querySelector('#filename').value;
         const bitrate = document.querySelector('#bitrate').value;
+        const scale = document.querySelector('#scale').value;
         const crop = document.querySelector('#crop').value;
 
-        const command = `ffmpeg -hide_banner -y -i ${filename} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=1:qcomp=0.65 -preset slow -an -f matroska /dev/null && \\\n` +
-            `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=2:qcomp=0.65 -preset slow -map 0:a:0 -c:a:0 ac3 -b:a:0 640k`;
-
+        const command = `ffmpeg -hide_banner -y -i ${filename} ${getScale(scale)} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=1:qcomp=0.65 -preset slow -an -f matroska /dev/null && \\\n` +
+                        `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -c:v:0 libx265 -b:v:0 ${bitrate} -x265-params pass=2:qcomp=0.65 -preset slow -map 0:a:0 -c:a:0 ac3 -b:a:0 640k`;
+ 
         document.querySelector('#command').value = command;
 
     }
