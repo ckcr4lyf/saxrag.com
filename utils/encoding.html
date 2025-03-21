@@ -17,14 +17,23 @@
         return `-vf "scale=${scaleval}"`;
     }
 
+    function getFilmGrain(grain){
+        if (grain === ''){
+            return '';
+        }
+
+        return `--film-grain ${grain}`
+    }
+
     function command_av1() {
         const filename = document.querySelector('#filename').value;
         const bitrate = document.querySelector('#bitrate').value;
         const crop = document.querySelector('#crop').value;
         const scale = document.querySelector('#scale').value;
+        const filmGrain = document.querySelector('#film_grain').value;
 
-        const command = `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 1 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}.ivf && \\\n` +
-                        `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 --rc 1 --tbr ${bitrate} --pass 2 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}_2.ivf `
+        const command = `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 ${getFilmGrain(filmGrain)} --rc 1 --tbr ${bitrate} --pass 1 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}.ivf && \\\n` +
+                        `ffmpeg -hide_banner -y -i ${filename} -map 0:v:0 ${getScale(scale)} ${getCrop(crop)} -pix_fmt yuv420p10le -f yuv4mpegpipe -strict -1 - | svtav1 -i stdin --preset 5 --keyint 240 --input-depth 10 ${getFilmGrain(filmGrain)} --rc 1 --tbr ${bitrate} --pass 2 --stats ${filename}_${bitrate}_stats.log --tune 0 -b ${filename}_${bitrate}_2.ivf `
 
         document.querySelector('#command').value = command;
 
@@ -86,6 +95,10 @@
         <tr>
             <td>Scale (e.g. 1280:720) (Optional)</td>
             <td><input type="text" id="scale"></td>
+        </tr>
+        <tr>
+            <td>Film Grain (Optional)</td>
+            <td><input type="text" id="film_grain"></td>
         </tr>
     </table>
 
