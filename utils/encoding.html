@@ -125,4 +125,16 @@
             <li>1920x804: 1920:804:0:138</li>
         </ul>
     </div>
+    <div>
+        <h2>AV1 muxing via ffmpeg</h2>
+        <tt><pre>
+ffmpeg -i AV1_encoded.ivf -i Source.mkv -map 0:v:0 -c:v copy -map 1:a:0 -c:a:0 aac -b:a 192k -ac 2 -map 1:s:2 -c:s copy \
+    -metadata title="Movie (Year)" \
+    -metadata:s:a:0 language=eng \
+    -metadata:s:a:0 title="AAC 2.0 (English)" \
+    -metadata:s:s:0 language=eng \
+    -metadata:s:s:0 title="English" \
+    Name_Final.mkv
+            </pre></tt>
+    </div>
 </body>
