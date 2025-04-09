@@ -128,7 +128,8 @@
     <div>
         <h2>AV1 muxing via ffmpeg</h2>
         <tt><pre>
-ffmpeg -i AV1_encoded.ivf -i Source.mkv -map 0:v:0 -c:v copy -map 1:a:0 -c:a:0 aac -b:a 192k -ac 2 -map 1:s:2 -c:s copy \
+ffmpeg -i AV1_encoded.ivf -i Source.mkv -map 0:v:0 -c:v:0 copy -map 1:a:0 -c:a:0 aac -b:a:0 192k -ac 2 -map 1:s:1 -c:s:0 copy \
+    -map_metadata -1:s \
     -metadata title="Movie (Year)" \
     -metadata:s:a:0 language=eng \
     -metadata:s:a:0 title="AAC 2.0 (English)" \
