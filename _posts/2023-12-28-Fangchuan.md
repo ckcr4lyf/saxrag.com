@@ -62,11 +62,11 @@ Getting of the cab, a tunnel under the highway led the way towards the river, so
 <table>
 <tr>
 <td>
-<img src="https://assets.saxrag.com/hunchun/tunnel.jpg">
+<img src="https://saxrag.com/bucket/hunchun/tunnel.jpg">
 <em>Underpass towards Tumen River</em>
 </td>
 <td>
-<img src="https://assets.saxrag.com/hunchun/warning.jpg">
+<img src="https://saxrag.com/bucket/hunchun/warning.jpg">
 <em>Stuff you shouldn't do</em>
 </td>
 </tr>
@@ -120,11 +120,11 @@ Our first stop was at one of the bridges connecting China to North Korea. This w
 
 <div class="image-row">
   <figure>
-    <img src="https://assets.saxrag.com/hunchun/bridge_entrance.jpg" />
+    <img src="https://saxrag.com/bucket/hunchun/bridge_entrance.jpg" />
     <figcaption>Entrance to the bridge to North Korea. I was not allowed in.</figcaption>
   </figure>
   <figure>
-    <img src="https://assets.saxrag.com/hunchun/truck_line.jpg" />
+    <img src="https://saxrag.com/bucket/hunchun/truck_line.jpg" />
     <figcaption>Trucks lined up to go to North Korea, presumably carrying some goods.</figcaption>
   </figure>
 </div>
@@ -158,10 +158,10 @@ It's a petty impressive and massive tower, and from what I can tell, it is built
 <table>
 <tr>
 <td>
-<img src="https://assets.saxrag.com/hunchun/tower.jpg">
+<img src="https://saxrag.com/bucket/hunchun/tower.jpg">
 </td>
 <td>
-<img src="https://assets.saxrag.com/hunchun/tower_front.jpg">
+<img src="https://saxrag.com/bucket/hunchun/tower_front.jpg">
 </td>
 </tr>
 </table>
