@@ -24,10 +24,5 @@ For all my projects, I like to implement and do as much as I can myself - for in
 	
 As an example, I wrote my own Prometheus exporter for my bittorrent tracker kouko, which allowed me to have very fine grained control over how the metrics were exported. I like to host all my projects myself, which has taught me a lot about deployment and infrastructure management, such as using reverse proxies (my favorite being nginx), TCP tuning the kernel when dealing with large request volumes, handling domains and SSL certs, and of course, monitoring & logging! (Thanks Grafana & Prometheus & Tempo & Loki)
 
-#### Questions?
-
-<a href="mailto:poiasdpoiasd@live.com">Email Me!</a> and [please use my PGP key](/assets/pgp/Raghu_Saxena_poiasdpoiasd@live.com_0xA1E21ED06A67D28A.asc) to encrypt all communications.
-
-
 ### I use arch, btw
 

@@ -34,4 +34,5 @@ gem "webrick", "~> 1.7"
 
 gem "json", "~> 2.7"
 gem 'jekyll-sitemap'
-
+gem "csv"
+gem "base64"
