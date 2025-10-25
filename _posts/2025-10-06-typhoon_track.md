@@ -35,7 +35,7 @@ Unfortunately, it seems they only provide the latest snapshot of the trajectory 
 
 ## Downloadng images for a timelapse
 
-Since HKO conveniently provides a particular zoom-level of a specific typhoon at a constant URL, I just wrote a simple shell script to grab the image once an hour and save it.
+Since HKO conveniently provides a particular zoom-level of a specific typhoon at a constant URL, [I just wrote a simple shell script](https://github.com/ckcr4lyf/hongkongstuff/blob/master/hko/typhoon/typhoon.sh) to grab the image once an hour and save it.
 
 Then, once the typhoon is near the end, I concatenate all the images into a timelapse using ffmpeg to make some fun videos.
 
