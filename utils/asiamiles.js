@@ -28,6 +28,13 @@ const data = [
         comments: 'Limited to HK$10,000 per quarter for Travel & FX separately ($10k each). Online Travel includes several airlines, trip.com etc.',
     },
     {
+        cardName: 'AMEX Platinum',
+        subcategory: 'FX / Everyday Merchants / Travel',
+        pointsPerDollar: 9,
+        pointsPerMile: AMEX_POINTS_PER_MILE,
+        comments: 'Limited to HK$15,000 per quarter for Everyday Merchants, Travel & FX separately ($15k each). Online Travel includes several airlines, agoda, booking.com, trip.com etc.',
+    },
+    {
         cardName: 'HSBC Red',
         subcategory: 'Online Transactions',
         pointsPerDollar: 0.04,
