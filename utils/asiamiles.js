@@ -16,6 +16,7 @@ const data = [
     {
         cardName: 'AMEX Explorer',
         subcategory: '5X Merchants',
+        link: 'https://www.americanexpress.com/en-hk/benefits/offers/dining/5x-offer/index.html',
         pointsPerDollar: 5,
         pointsPerMile: AMEX_POINTS_PER_MILE,
         comments: '',
@@ -23,6 +24,7 @@ const data = [
     {
         cardName: 'AMEX Explorer',
         subcategory: 'Online Travel & FX Transactions',
+        link: 'https://www.americanexpress.com/en-hk/benefits/offers/travel/explorer-overseas-spend-offer/',
         pointsPerDollar: 10.75,
         pointsPerMile: AMEX_POINTS_PER_MILE,
         comments: 'Limited to HK$10,000 per quarter for Travel & FX separately ($10k each). Online Travel includes several airlines, trip.com etc.',
@@ -30,6 +32,7 @@ const data = [
     {
         cardName: 'AMEX Platinum',
         subcategory: 'FX / Everyday Merchants / Travel',
+        link: 'https://www.americanexpress.com/en-hk/benefits/offers/shopping/platinum-membership-rewards-accelerator/',
         pointsPerDollar: 9,
         pointsPerMile: AMEX_POINTS_PER_MILE,
         comments: 'Limited to HK$15,000 per quarter for Everyday Merchants, Travel & FX separately ($15k each). Online Travel includes several airlines, agoda, booking.com, trip.com etc.',
@@ -44,6 +47,7 @@ const data = [
     {
         cardName: 'HSBC Visa Signature',
         subcategory: 'RHRYC',
+        link: 'https://www.hsbc.com.hk/credit-cards/rewards/your-choice/',
         pointsPerDollar: 0.036,
         pointsPerMile: HSBC_RC_PER_MILE_REGULAR,
         comments: 'RHRYC can only be set once per calendar year',
@@ -126,7 +130,14 @@ const renderTable = (value) => {
         row.appendChild(td);
 
         td = document.createElement('td');
-        td.innerText = card.subcategory;
+        if (card.link !== undefined){
+            const a = document.createElement('a');
+            a.href = card.link;
+            a.innerText = card.subcategory;
+            td.appendChild(a);
+        } else {
+            td.innerText = card.subcategory;
+        }
         row.appendChild(td);
 
         td = document.createElement('td');
