@@ -45,6 +45,14 @@ const data = [
         comments: 'Limited to HK$10,000 per calendar month',
     },
     {
+        cardName: 'HSBC Red',
+        subcategory: 'Online Transactions (DCC FEE)',
+        link: 'https://www.mrmiles.hk/dcc/',
+        pointsPerDollar: 0.03,
+        pointsPerMile: HSBC_RC_PER_MILE_REGULAR,
+        comments: 'Limited to HK$10,000 per calendar month (Examples of DCC merchants: Airbnb, Uber, Agoda)',
+    },
+    {
         cardName: 'HSBC Visa Signature',
         subcategory: 'RHRYC',
         link: 'https://www.hsbc.com.hk/credit-cards/rewards/your-choice/',
