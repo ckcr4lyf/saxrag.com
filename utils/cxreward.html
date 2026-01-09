@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CX Reward Availability</title>
+    <meta name="description" content="This tool is to help check if a CX Reward is available for a given flight.">
+    <script src="/utils/cxreward.js"></script>
+    <style>
+      .H {
+        background-color: green;
+      }
+      .L {
+        background-color: yellow;
+      }
+      .NA {
+        background-color: grey;
+      }
+    </style>
+</head>
+<body>
+    <h1>CX Reward Availability</h1>
+    <div>
+      <p>This tool gives approx award availability for CX flights ONLY (i.e. no codeshare/partner flights). It uses the unauthenticated query API (e.g. when you browse reward flights on Cathay website without logging in).</p>
+    </div>
+    <div id="availability">
+      <table id="availability-table">
+
+      </table>
+    </div>
+    <button onclick="main()">Check Availability</button>
+</body>
+</html>
