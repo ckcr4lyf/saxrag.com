@@ -1,3 +1,6 @@
+// Use current timestamp to avoid caching (especially for access-control-allow-origin)
+const TS = Date.now();
+
 /**
  * @typedef {Object} AvailabilityEntry
  * @property {string} date - Date in YYYYMMDD format (e.g., "20260401")
@@ -27,7 +30,7 @@
  * @returns {Promise<AvailabilityResponse | string>} Promise that resolves to the availability data
  */
 async function requestAvailability(origin, destination, cabinClass, startDate, endDate) {
-  const url = `https://api.cathaypacific.com/afr/search/availability/en.${origin}.${destination}.${cabinClass}.CX.1.${startDate}.${endDate}.json`;
+  const url = `https://api.cathaypacific.com/afr/search/availability/en.${origin}.${destination}.${cabinClass}.CX.1.${startDate}.${endDate}.json?ts=${TS}`;
 
   try {
     const response = await fetch(url);
