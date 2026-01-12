@@ -94,26 +94,16 @@ function renderAvailabilityTable(data) {
  * @returns {void}
  */
 async function main() {
-  const startDate = '20260401';
-  const endDate = '20260414';
-  const routes = [
-    {
-      origin: 'HKG',
-      destination: 'BKK',
-      cabinClass: 'eco',
-    },
-    {
-      origin: 'HKG',
-      destination: 'CTS',
-      cabinClass: 'eco',
-    },
-    {
-      origin: 'HKG',
-      destination: 'HAN',
-      cabinClass: 'eco',
-    },
-  ]
-  const dataPromises = [];
+  const startDate = document.querySelector('#startDate').value;
+  const endDate = document.querySelector('#endDate').value;
+  const routes = document.querySelector('#routes').value.split('\n').map(route => {
+    const [origin, destination, cabinClass] = route.split(',');
+    return {
+      origin,
+      destination,
+      cabinClass,
+    };
+  });
   const data = [];
 
   
