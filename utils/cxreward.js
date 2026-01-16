@@ -96,23 +96,37 @@ function renderAvailabilityTable(data) {
 async function main() {
   const startDate = document.querySelector('#startDate').value;
   const endDate = document.querySelector('#endDate').value;
+  const autoReturn = document.querySelector('#autoReturn').checked;
   const routes = document.querySelector('#routes').value.split('\n').map(route => {
-    const [origin, destination, cabinClass] = route.split(',');
-    return {
-      origin,
-      destination,
-      cabinClass,
-    };
+    const [origin, destination, ...cabinClasses] = route.split(',');
+    let innerRoutes = [];
+
+    for (const cabinClass of cabinClasses) {
+      innerRoutes.push({
+        origin,
+        destination,
+        cabinClass,
+      });
+
+      if (autoReturn) {
+        innerRoutes.push({
+          origin: destination,
+          destination: origin,
+          cabinClass,
+        });
+      }
+    }
+
+    return innerRoutes;
   });
+  
+  const flattenedRoutes = routes.flat();
   const data = [];
 
-  
-  for (const route of routes) {
-    const availability1 = await requestAvailability(route.origin, route.destination, route.cabinClass, startDate, endDate);
-    const availability2 = await requestAvailability(route.destination, route.origin, route.cabinClass, startDate, endDate);
-    data.push(availability1);
-    data.push(availability2);
-    partialRender(routes, data);
+  for (const route of flattenedRoutes) {
+    const availability = await requestAvailability(route.origin, route.destination, route.cabinClass, startDate, endDate);
+    data.push(availability);
+    partialRender(flattenedRoutes, data);
   }
 
 
@@ -137,8 +151,8 @@ const partialRender = (routes, data) => {
     if (typeof data[i] === 'string') {
       continue;
     }
-    const route = routes[Math.floor(i / 2)];
-    const routeColumn = i % 2 == 0 ? `${route.origin}-${route.destination}` : `${route.destination}-${route.origin}`;
+    const route = routes[i];
+    const routeColumn = `${route.origin}-${route.destination}`;
     tableData.push({
       route: routeColumn,
       cabinClass: route.cabinClass,
