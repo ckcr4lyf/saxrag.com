@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * @returns {Promise<Record<string,number>|null>} milesRequired by cabin class, or null on error
  */
 async function requestSearchOptions(origin, destination) {
-  const url = `https://api.cathaypacific.com/afr/searchpanel/searchoptions/en.${origin}.${destination}.rt.std.CX.json?ts=${TS}`;
+  const url = `https://api.cathaypacific.com/afr/searchpanel/searchoptions/en.${origin}.${destination}.ow.std.CX.json?ts=${TS}`;
   try {
     const response = await fetch(url);
     if (!response.ok) return null;
