@@ -136,7 +136,11 @@ function renderAvailabilityTable(data) {
       <td>${entry.route}</td>
       <td>${entry.cabinClass}</td>
       <td>${milesDisplay}</td>
-      ${entry.availability.map(a => `<td class="${a.availability}">${a.availability}</td>`).join('')}
+      ${entry.availability.map(a => {
+        const dateStr = `${a.date.slice(0, 4)}-${a.date.slice(4, 6)}-${a.date.slice(6, 8)}`;
+        const title = `Route: ${entry.route}\nClass: ${entry.cabinClass}\nDate: ${dateStr}\nMiles: ${milesDisplay}`;
+        return `<td class="${a.availability}" title="${title.replace(/"/g, '&quot;')}">${a.availability}</td>`;
+      }).join('')}
       <td>${entry.updateTime}</td>
       </tr>
     `;
