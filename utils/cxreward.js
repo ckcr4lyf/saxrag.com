@@ -43,6 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 
 /**
+ * Request search options (miles required) for a route pair
+ * @param {string} origin - Origin airport code
+ * @param {string} destination - Destination airport code
+ * @returns {Promise<Record<string,number>|null>} milesRequired by cabin class, or null on error
+ */
+async function requestSearchOptions(origin, destination) {
+  const url = `https://api.cathaypacific.com/afr/searchpanel/searchoptions/en.${origin}.${destination}.rt.std.CX.json?ts=${TS}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data.milesRequired ?? null;
+  } catch (error) {
+    console.error('Error fetching search options:', error);
+    return null;
+  }
+}
+
+/**
  * Request availability from Cathay Pacific API
  * @param {string} origin - Origin airport code (e.g., "BKK")
  * @param {string} destination - Destination airport code (e.g., "HKG")
@@ -92,13 +111,14 @@ function renderAvailabilityTable(data) {
   <tr>
     <th>Route</th>
     <th>Cabin Class</th>
+    <th>Miles</th>
     ${data[0].availability.map(a => `<th>${a.date.slice(0, 4)}-${a.date.slice(4, 6)}-${a.date.slice(6, 8)}</th>`).join('')}
     <th>Update Time (on CX Backend) (HKT)</th>
   </tr>
   `;
   table.appendChild(thead);
 
-  const colCount = 3 + data[0].availability.length;
+  const colCount = 4 + data[0].availability.length;
   let lastGroup = -1;
 
   for (const entry of data) {
@@ -110,10 +130,12 @@ function renderAvailabilityTable(data) {
     }
     lastGroup = entry.groupIndex;
 
+    const milesDisplay = entry.milesRequired != null ? entry.milesRequired.toLocaleString() : '–';
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${entry.route}</td>
       <td>${entry.cabinClass}</td>
+      <td>${milesDisplay}</td>
       ${entry.availability.map(a => `<td class="${a.availability}">${a.availability}</td>`).join('')}
       <td>${entry.updateTime}</td>
       </tr>
@@ -163,12 +185,20 @@ async function main() {
   const flattenedRoutes = routes.flatMap((innerRoutes, groupIndex) =>
     innerRoutes.map(r => ({ ...r, groupIndex }))
   );
-  const data = [];
 
+  const uniquePairs = [...new Set(flattenedRoutes.map(r => `${r.origin}-${r.destination}`))];
+  const milesMap = {};
+  await Promise.all(uniquePairs.map(async (pair) => {
+    const [origin, destination] = pair.split('-');
+    const milesRequired = await requestSearchOptions(origin, destination);
+    milesMap[pair] = milesRequired;
+  }));
+
+  const data = [];
   for (const route of flattenedRoutes) {
     const availability = await requestAvailability(route.origin, route.destination, route.cabinClass, startDate, endDate);
     data.push(availability);
-    partialRender(flattenedRoutes, data);
+    partialRender(flattenedRoutes, data, milesMap);
   }
 
 
@@ -185,9 +215,10 @@ async function main() {
  * Partial render of the availability data
  * @param {RouteQuery[]} routes - Routes data
  * @param {AvailabilityResponse[]} data - Availability data
+ * @param {Record<string,Record<string,number>>} milesMap - Miles required by route pair and cabin class
  * @returns {void}
  */
-const partialRender = (routes, data) => {
+const partialRender = (routes, data, milesMap = {}) => {
   const tableData = [];
   for (let i = 0; i < data.length; i++) {
     if (typeof data[i] === 'string') {
@@ -195,9 +226,11 @@ const partialRender = (routes, data) => {
     }
     const route = routes[i];
     const routeColumn = `${route.origin}-${route.destination}`;
+    const miles = milesMap[routeColumn]?.[route.cabinClass];
     tableData.push({
       route: routeColumn,
       cabinClass: route.cabinClass,
+      milesRequired: miles,
       groupIndex: route.groupIndex,
       availability: data[i].availabilities.std.map(a => ({
         date: a.date,
