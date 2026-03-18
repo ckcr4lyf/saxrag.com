@@ -1,6 +1,28 @@
 // Use current timestamp to avoid caching (especially for access-control-allow-origin)
 const TS = Date.now();
 
+const CXREWARD_STORAGE_KEY = 'cxreward-routes';
+const CXREWARD_STORAGE_KEY_START = 'cxreward-startDate';
+const CXREWARD_STORAGE_KEY_END = 'cxreward-endDate';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem(CXREWARD_STORAGE_KEY);
+  if (saved) {
+    const textarea = document.querySelector('#routes');
+    if (textarea) textarea.value = saved;
+  }
+  const savedStart = localStorage.getItem(CXREWARD_STORAGE_KEY_START);
+  if (savedStart) {
+    const el = document.querySelector('#startDate');
+    if (el) el.value = savedStart;
+  }
+  const savedEnd = localStorage.getItem(CXREWARD_STORAGE_KEY_END);
+  if (savedEnd) {
+    const el = document.querySelector('#endDate');
+    if (el) el.value = savedEnd;
+  }
+});
+
 /**
  * @typedef {Object} AvailabilityEntry
  * @property {string} date - Date in YYYYMMDD format (e.g., "20260401")
@@ -94,8 +116,15 @@ function renderAvailabilityTable(data) {
  * @returns {void}
  */
 async function main() {
-  const startDate = document.querySelector('#startDate').value;
-  const endDate = document.querySelector('#endDate').value;
+  const routesEl = document.querySelector('#routes');
+  if (routesEl) localStorage.setItem(CXREWARD_STORAGE_KEY, routesEl.value);
+  const startDateEl = document.querySelector('#startDate');
+  const endDateEl = document.querySelector('#endDate');
+  if (startDateEl) localStorage.setItem(CXREWARD_STORAGE_KEY_START, startDateEl.value);
+  if (endDateEl) localStorage.setItem(CXREWARD_STORAGE_KEY_END, endDateEl.value);
+
+  const startDate = startDateEl?.value ?? '';
+  const endDate = endDateEl?.value ?? '';
   const autoReturn = document.querySelector('#autoReturn').checked;
   const routes = document.querySelector('#routes').value.split('\n').map(route => {
     const [origin, destination, ...cabinClasses] = route.split(',');
