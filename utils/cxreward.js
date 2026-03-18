@@ -98,7 +98,18 @@ function renderAvailabilityTable(data) {
   `;
   table.appendChild(thead);
 
+  const colCount = 3 + data[0].availability.length;
+  let lastGroup = -1;
+
   for (const entry of data) {
+    if (entry.groupIndex !== lastGroup && lastGroup >= 0) {
+      const sep = document.createElement('tr');
+      sep.innerHTML = `<td colspan="${colCount}"></td>`;
+      sep.className = 'route-separator';
+      table.appendChild(sep);
+    }
+    lastGroup = entry.groupIndex;
+
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${entry.route}</td>
@@ -148,8 +159,10 @@ async function main() {
 
     return innerRoutes;
   });
-  
-  const flattenedRoutes = routes.flat();
+
+  const flattenedRoutes = routes.flatMap((innerRoutes, groupIndex) =>
+    innerRoutes.map(r => ({ ...r, groupIndex }))
+  );
   const data = [];
 
   for (const route of flattenedRoutes) {
@@ -185,6 +198,7 @@ const partialRender = (routes, data) => {
     tableData.push({
       route: routeColumn,
       cabinClass: route.cabinClass,
+      groupIndex: route.groupIndex,
       availability: data[i].availabilities.std.map(a => ({
         date: a.date,
         availability: a.availability,
