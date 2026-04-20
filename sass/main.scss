@@ -77,6 +77,17 @@ p {
     padding: 4rem 2rem;
 }
 
+@media (max-width: 600px) {
+    .w {
+        width: 90%;
+        padding: 0rem 0.5rem 2rem 0rem;
+    }
+
+    ul {
+        padding: 1rem;
+    }
+}
+
 hr {
     text-align: center;
     border: 0;
