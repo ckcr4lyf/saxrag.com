@@ -1,7 +1,7 @@
----
-layout: home
-title: Home
----
++++
+title = "Home"
+template = "index.html"
++++
 
 ### About
 
@@ -20,9 +20,8 @@ I am a developer who enjoys server side technologies, encryption and privacy. I 
 
 My software engineering experience lies primarily in backend technologies, though I also do dabble in infrastructure related components such as docker / kubernetes and the like. I am a huge typescript fanboy, slowly getting converted to Rust, and also write a fair amount of Go.
 
-For all my projects, I like to implement and do as much as I can myself - for instance avoid using tiny libraries (which usually exist for a good reason) and instead write the implementation myself. This stubornness has led to me learning a lot of things which I otherwise would have taken for granted.
-	
+For all my projects, I like to implement and do as much as I can myself - for instance avoid using tiny libraries (which usually exist for a good reason) and instead write the implementation myself. This stubbornness has led to me learning a lot of things which I otherwise would have taken for granted.
+
 As an example, I wrote my own Prometheus exporter for my bittorrent tracker kouko, which allowed me to have very fine grained control over how the metrics were exported. I like to host all my projects myself, which has taught me a lot about deployment and infrastructure management, such as using reverse proxies (my favorite being nginx), TCP tuning the kernel when dealing with large request volumes, handling domains and SSL certs, and of course, monitoring & logging! (Thanks Grafana & Prometheus & Tempo & Loki)
 
 ### I use arch, btw
-

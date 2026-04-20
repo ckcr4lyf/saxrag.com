@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+
+  {% block seo %}
+  <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock og_title %}">
+  <meta property="og:description" content="{{ config.description }}">
+  <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+  <meta name="author" content="{{ config.author }}">
+  {% endblock seo %}
+
+  <link rel="stylesheet" href="/main.css">
+  <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="/feed.xml">
+
+  <link rel="icon" href="/favicon.ico">
+</head>
+<body a="{{ config.extra.appearance }}">
+  <main class="page-content" aria-label="Content">
+    <div class="w">
+      {% block content %}{% endblock content %}
+    </div>
+  </main>
+</body>
+</html>

@@ -1,10 +1,12 @@
----
-layout: post
-title: "Tracking Hong Kong Typhoon Trajectory"
-categories: tech
-tags: hongkong typhoon hko weather
-summary: Saving images from HKO's typhoon predicition to form a timelapse
----
++++
+title = "Tracking Hong Kong Typhoon Trajectory"
+date = 2025-10-06
+template = "post.html"
+path = "tech/2025/10/06/typhoon_track.html"
+
+[extra]
+summary = "Saving images from HKO's typhoon prediction to form a timelapse"
++++
 
 <style>
   table,
@@ -33,7 +35,7 @@ Unfortunately, it seems they only provide the latest snapshot of the trajectory 
 </tr>
 </table>
 
-## Downloadng images for a timelapse
+## Downloading images for a timelapse
 
 Since HKO conveniently provides a particular zoom-level of a specific typhoon at a constant URL, [I just wrote a simple shell script](https://github.com/ckcr4lyf/hongkongstuff/blob/master/hko/typhoon/typhoon.sh) to grab the image once an hour and save it.
 
@@ -50,6 +52,6 @@ Depending on the zoom level and the distance from Hong Kong, HKO might update th
 The following works well:
 
 ```
-find . -maxdepth 1 -name "*.png" -print0 | xargs -0 shafind . -maxdepth 1 -name "*.png" -print0 | xargs -0 shasum | sort | uniq -w 40 | awk '{print "file " $2}'sum | sort | uniq -w 40 | awk '{print "file " $2}' > list.txt
+find . -maxdepth 1 -name "*.png" -print0 | xargs -0 shasum | sort | uniq -w 40 | awk '{print "file " $2}' > list.txt
 ffmpeg -f concat -safe 0 -r 6 -i list.txt -c:v libx264 -crf 0 -vf "fps=6,format=yuv420p" output.mp4
 ```

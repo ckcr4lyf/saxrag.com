@@ -1,0 +1,27 @@
+base_url = "https://www.saxrag.com"
+title = "saxrag"
+description = "Personal website talking about some stuff I've made and technology"
+author = "Raghu Saxena"
+
+# Generate feed at /feed.xml to match Jekyll's jekyll-feed output path
+generate_feeds = true
+feed_filenames = ["feed.xml"]
+
+# Compile sass
+compile_sass = true
+
+
+[extra]
+appearance = "light"
+email = "poiasd@saxrag.com"
+email_backup = "poiasdpoiasd@live.com"
+github = "ckcr4lyf"
+pgp_key = "/assets/pgp/Raghu_Saxena_poiasd@saxrag.com_0x150969BA79F8A9AE.asc"
+pgp_key_backup = "/assets/pgp/Raghu_Saxena_poiasdpoiasd@live.com_0xA1E21ED06A67D28A.asc"
+
+menu = [
+  { title = "Blog", url = "/blog" },
+  { title = "Cocktails", url = "/cocktails" },
+  { title = "Utils", url = "/utils" },
+  { title = "github", url = "https://github.com/ckcr4lyf" },
+]

@@ -1,7 +1,7 @@
----
-layout: page
-title: PGP & its importance
----
++++
+title = "PGP & its importance"
+template = "page.html"
++++
 
 On the Internet, nobody knows ~~you're a dog~~ if its _really_ you
 
@@ -41,7 +41,7 @@ To explain how they work, we imagine a scenario where **Alice (the sender)** wan
 
 The actual signing and verification processes are mathematical operations, but basically a valid signature tells Bob that "whomever sent this message knows Alice's private key, since they were able to generate a valid signature". It is Alice's duty to keep her private key, well, private. Once she signs the message on her own computer, she could send it over any channel - Email, Twitter, Instagram or Reddit, while allowing Bob (or anyone else) to guarantee the message really came from her.
 
-P.S. If you want to see some examples of digital signatures, [I've included them at the end!](#signing--verification-in-action)
+P.S. If you want to see some examples of digital signatures, [I've included them at the end!](#signing-verification-in-action)
 
 
 ## The Key Exchange Problem
@@ -50,9 +50,9 @@ The keys mentioned above are very very large numbers. Recall that Alice needs to
 
 This poses a problem - how does Alice send the public key she generated to Bob? Since Bob doesn't have her public key yet, he cannot trust that a public key sent to him over Email or Facebook is really Alice's public key. The solution is rather primitive: Alice & Bob need to meet and exchange their keys _in real life_, in order to guarantee no one in the middle has tampered with the key.
 
-A common compromise is to exchange keys digitally anyway, for instance via E-Mail. But until you've met them in person, you mark the key as unverified - so can at least being to communicate with the second party. Later on, when you meet them in real life and verify keys, you can mark it as verified, which can then give confidence in future messages.
+A common compromise is to exchange keys digitally anyway, for instance via E-Mail. But until you've met them in person, you mark the key as unverified - so can at least begin to communicate with the second party. Later on, when you meet them in real life and verify keys, you can mark it as verified, which can then give confidence in future messages.
 
-![Example of Bill Gates hijacked tweet](/assets/images/pgp/thunderbird.png)
+![Key acceptance options in Thunderbird](/assets/images/pgp/thunderbird.png)
 *Key acceptance options in [Thunderbird](https://www.thunderbird.net/), a popular open source email client*
 
 ### Free Beer

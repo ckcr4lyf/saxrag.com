@@ -1,8 +1,8 @@
-static:
-	bundle exec jekyll build
-
-watch:
-	bundle exec jekyll build --watch
+build:
+	zola build
 
 serve:
-	bundle exec jekyll serve
+	zola serve
+
+check:
+	zola check

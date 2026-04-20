@@ -15,18 +15,13 @@ body[a="dark"] {
     @include dark-appearance;
 }
 
-
 @media (prefers-color-scheme: dark) {
     body[a="auto"] {
         @include dark-appearance;
     }
 }
-
 // -------------------------------------------- //
 
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
 html,
 body {
     background: white;
@@ -72,19 +67,25 @@ p {
     margin: 1rem 0;
 }
 
-li {
-    // margin: 0.2rem 0;
-}
-
 *:target {
     background: yellow;
 }
 
 .w {
-    // max-width: 720px;
     width: 50%;
     margin: 0 auto;
     padding: 4rem 2rem;
+}
+
+@media (max-width: 600px) {
+    .w {
+        width: 90%;
+        padding: 0rem 0.5rem 2rem 0rem;
+    }
+
+    ul {
+        padding: 1rem;
+    }
 }
 
 hr {
@@ -92,11 +93,11 @@ hr {
     border: 0;
 
     &:before {
-        content: '/////'
+        content: '/////';
     }
 
     &:after {
-        content: attr(data-content) '/////'
+        content: attr(data-content) '/////';
     }
 }
 
@@ -117,7 +118,7 @@ code {
     background: black;
 }
 
-div.highlighter-rouge code {
+pre code {
     display: block;
     overflow-x: auto;
     white-space: pre-wrap;
@@ -142,4 +143,15 @@ img {
 
 a:visited {
     color: blue;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
 }
