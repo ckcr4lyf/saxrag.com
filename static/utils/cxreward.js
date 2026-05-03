@@ -199,7 +199,7 @@ function renderAvailabilityTable(data, fareMap = {}) {
         if (fareEntry) {
           title += `\nBase Fare (RT): ${fareEntry.base_fare} ${currency}\nTax (RT): ${fareEntry.tax} ${currency}`;
           if (entry.milesRequired) {
-            const vpm = (fareEntry.base_fare / entry.milesRequired).toFixed(4);
+            const vpm = (fareEntry.base_fare / (entry.milesRequired * 2)).toFixed(4);
             title += `\nValue/Mile (RT): ${vpm} ${currency}`;
           }
         }
