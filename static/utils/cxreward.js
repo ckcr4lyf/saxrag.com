@@ -261,27 +261,26 @@ async function main() {
     innerRoutes.map(r => ({ ...r, groupIndex }))
   );
 
-  const uniquePairs = [...new Set(flattenedRoutes.map(r => `${r.origin}-${r.destination}`))];
-  const milesMap = {};
-  for (const pair of uniquePairs) {
-    const [origin, destination] = pair.split('-');
-    const milesRequired = await requestSearchOptions(origin, destination);
-    milesMap[pair] = milesRequired;
-    await randomDelay();
-  }
-
   const data = [];
   const month = startDate.slice(4, 6);
   const fareMap = {};
-  for (const pair of uniquePairs) {
-    const [origin, destination] = pair.split('-');
-    const cabinClasses = [...new Set(flattenedRoutes.filter(r => `${r.origin}-${r.destination}` === pair).map(r => r.cabinClass))];
-    for (const cc of cabinClasses) {
-      const fareCabin = FARE_CABIN_MAP[cc];
-      if (!fareCabin) continue;
-      const key = `${pair}-${cc}`;
+  const milesMap = {};
+  const milesCache = {};
+
+  for (const route of flattenedRoutes) {
+    const pair = `${route.origin}-${route.destination}`;
+
+    if (!(pair in milesCache)) {
+      milesCache[pair] = await requestSearchOptions(route.origin, route.destination);
       await randomDelay();
-      const fareData = await requestFareData(origin, destination, month, fareCabin);
+    }
+    milesMap[pair] = milesCache[pair];
+
+    const fareCabin = FARE_CABIN_MAP[route.cabinClass];
+    if (fareCabin) {
+      const key = `${pair}-${route.cabinClass}`;
+      await randomDelay();
+      const fareData = await requestFareData(route.origin, route.destination, month, fareCabin);
       if (fareData && fareData.length > 0) {
         fareMap[key] = { currency: fareData[0].currency, _dates: {} };
         for (const entry of fareData) {
@@ -292,7 +291,7 @@ async function main() {
         }
       }
       await randomDelay();
-      const fareDataOW = await requestFareData(origin, destination, month, fareCabin, 'O');
+      const fareDataOW = await requestFareData(route.origin, route.destination, month, fareCabin, 'O');
       if (fareDataOW && fareDataOW.length > 0) {
         if (!fareMap[key]) fareMap[key] = { currency: fareDataOW[0].currency, _dates: {} };
         fareMap[key]._dates_oneway = {};
@@ -304,9 +303,7 @@ async function main() {
         }
       }
     }
-  }
 
-  for (const route of flattenedRoutes) {
     const availability = await requestAvailability(route.origin, route.destination, route.cabinClass, startDate, endDate);
     data.push(availability);
     partialRender(flattenedRoutes, data, milesMap, fareMap);
