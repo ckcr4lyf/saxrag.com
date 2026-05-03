@@ -20,7 +20,7 @@
     {% elif page.extra.summary %}
     <summary>{{ page.extra.summary }}</summary>
     {% endif %}
-    <content type="html">{{ page.content | escape }}</content>
+    <content type="html"><![CDATA[{{ page.content | safe }}]]></content>
   </entry>
   {% endfor %}
 </feed>
