@@ -199,7 +199,7 @@ function renderAvailabilityTable(data, fareMap = {}) {
         if (fareEntry) {
           title += `\nBase Fare (RT): ${fareEntry.base_fare} ${currency}\nTax (RT): ${fareEntry.tax} ${currency}`;
           if (entry.milesRequired) {
-            const vpm = (fareEntry.base_fare / entry.milesRequired).toFixed(4);
+            const vpm = (fareEntry.base_fare / (entry.milesRequired * 2)).toFixed(4);
             title += `\nValue/Mile (RT): ${vpm} ${currency}`;
           }
         }
@@ -262,8 +262,21 @@ async function main() {
   );
 
   const data = [];
-  const month = startDate.slice(4, 6);
+  const months = [];
+  {
+    let y = parseInt(startDate.slice(0, 4));
+    let m = parseInt(startDate.slice(4, 6));
+    const ey = parseInt(endDate.slice(0, 4));
+    const em = parseInt(endDate.slice(4, 6));
+    while (y < ey || (y === ey && m <= em)) {
+      months.push(String(m));
+      m++;
+      if (m > 12) { m = 1; y++; }
+    }
+  }
+
   const fareMap = {};
+  const fareCache = {};
   const milesMap = {};
   const milesCache = {};
 
@@ -279,28 +292,27 @@ async function main() {
     const fareCabin = FARE_CABIN_MAP[route.cabinClass];
     if (fareCabin) {
       const key = `${pair}-${route.cabinClass}`;
-      await randomDelay();
-      const fareData = await requestFareData(route.origin, route.destination, month, fareCabin);
-      if (fareData && fareData.length > 0) {
-        fareMap[key] = { currency: fareData[0].currency, _dates: {} };
-        for (const entry of fareData) {
-          fareMap[key]._dates[entry.date_departure] = {
-            base_fare: entry.base_fare,
-            tax: entry.tax,
-          };
+      if (!(key in fareCache)) {
+        fareMap[key] = { _dates: {}, _dates_oneway: {} };
+        for (const m of months) {
+          await randomDelay();
+          const fareData = await requestFareData(route.origin, route.destination, m, fareCabin);
+          if (fareData && fareData.length > 0) {
+            fareMap[key].currency = fareData[0].currency;
+            for (const entry of fareData) {
+              fareMap[key]._dates[entry.date_departure] = { base_fare: entry.base_fare, tax: entry.tax };
+            }
+          }
+          await randomDelay();
+          const fareDataOW = await requestFareData(route.origin, route.destination, m, fareCabin, 'O');
+          if (fareDataOW && fareDataOW.length > 0) {
+            if (!fareMap[key].currency) fareMap[key].currency = fareDataOW[0].currency;
+            for (const entry of fareDataOW) {
+              fareMap[key]._dates_oneway[entry.date_departure] = { base_fare: entry.base_fare, tax: entry.tax };
+            }
+          }
         }
-      }
-      await randomDelay();
-      const fareDataOW = await requestFareData(route.origin, route.destination, month, fareCabin, 'O');
-      if (fareDataOW && fareDataOW.length > 0) {
-        if (!fareMap[key]) fareMap[key] = { currency: fareDataOW[0].currency, _dates: {} };
-        fareMap[key]._dates_oneway = {};
-        for (const entry of fareDataOW) {
-          fareMap[key]._dates_oneway[entry.date_departure] = {
-            base_fare: entry.base_fare,
-            tax: entry.tax,
-          };
-        }
+        fareCache[key] = true;
       }
     }
 
