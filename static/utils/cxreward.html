@@ -20,6 +20,9 @@
         border-top: 1px solid #ccc;
         height: 4px;
       }
+      .text-div {
+        padding: 0.5em;
+      }
     </style>
 </head>
 <body>
@@ -38,13 +41,25 @@ HKG,HAN,eco</textarea><br />
       <input type="checkbox" id="autoReturn" name="autoReturn" checked>
       Auto include return leg
     </label><br>
-
+    <button onclick="main()">Check Availability</button>
+    </div>
+    <div class="text-div">
+      Protip: Hover over a certain cell to see the cost breakdown and value per mile
     </div>
     <div id="availability">
       <table id="availability-table">
 
       </table>
     </div>
-    <button onclick="main()">Check Availability</button>
+    <div class="text-div">
+      Comments? Suggestions? Contact me via E-Mail: <b>poiasd [at] saxrag.com</b>
+    </div>
+    <div class="text-div">
+      <h2>Donations welcome</h2>
+      <ul>
+        <li>BTC: bc1qzf939fdw37umsa3kxzrh3s20vm5ym6axxkzuht</li>
+        <li>XMR: 45oHa9qj1vT2q8x6jW9chNifa7Gp6asJR1S2qn64xENfHnU163s1TKFhPyyVPZo3jgJf9eRFkwX2tiLEbp7qf5F313BNAYG</li>
+      </ul>
+    </div>
 </body>
 </html>
