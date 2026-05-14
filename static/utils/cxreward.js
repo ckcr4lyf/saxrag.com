@@ -4,7 +4,7 @@ const TS = Date.now();
 const FARE_CABIN_MAP = {
   eco: 'Y',
   pey: 'W',
-  bus: 'J',
+  bus: 'C', // NOT J; supposedly industry standard (e.g. Amadeus) for business
   fir: 'F'
 };
 
