@@ -1,5 +1,13 @@
-// Use current timestamp to avoid caching (especially for access-control-allow-origin)
+// Use current timestamp to avoid caching
 const TS = Date.now();
+
+function corsFetch(url) {
+  const u = new URL(url);
+  const proxyUrl = new URL(`${u.pathname}${u.search}`, 'https://cors.saxrag.com/');
+  return fetch(proxyUrl, {
+    headers: { 'X-Real-Host': u.host },
+  });
+}
 
 const FARE_CABIN_MAP = {
   eco: 'Y',
@@ -67,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function requestSearchOptions(origin, destination) {
   const url = `https://api.cathaypacific.com/afr/searchpanel/searchoptions/en.${origin}.${destination}.ow.std.CX.json?ts=${TS}`;
   try {
-    const response = await fetch(url);
+    const response = await corsFetch(url);
     if (!response.ok) return null;
     const data = await response.json();
     return data.milesRequired ?? null;
@@ -90,7 +98,7 @@ async function requestAvailability(origin, destination, cabinClass, startDate, e
   const url = `https://api.cathaypacific.com/afr/search/availability/en.${origin}.${destination}.${cabinClass}.CX.1.${startDate}.${endDate}.json?ts=${TS}`;
 
   try {
-    const response = await fetch(url);
+    const response = await corsFetch(url);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -116,7 +124,7 @@ async function requestAvailability(origin, destination, cabinClass, startDate, e
 async function requestFareData(origin, destination, month, cabinClass, tripType = 'R') {
   const url = `https://book.cathaypacific.com/CathayPacificV3/dyn/air/api/instant/histogram?ORIGIN=${origin}&DESTINATION=${destination}&LANGUAGE=GB&SITE=CBEUCBEU&TYPE=DAY&MONTH=${month}&CABIN=${cabinClass}&TRIP_TYPE=${tripType}`;
   try {
-    const response = await fetch(url);
+    const response = await corsFetch(url);
     if (!response.ok) return null;
     return await response.json();
   } catch (error) {
