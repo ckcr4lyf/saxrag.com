@@ -2,6 +2,14 @@
 // GET https://www.hongkongairport.com/flightinfo-rest/rest/flights/past?date=YYYY-MM-DD&arrival=false&lang=en&cargo=false
 // Date is YYYY-MM-DD format
 
+function corsFetch(url) {
+  const u = new URL(url);
+  const proxyUrl = new URL(`${u.pathname}${u.search}`, 'https://cors.saxrag.com/');
+  return fetch(proxyUrl, {
+    headers: { 'X-Real-Host': u.host },
+  });
+}
+
 async function getFlightHistory(flightNo) {
   const container = document.getElementById('gate-history');
   if (!flightNo) {
@@ -20,9 +28,8 @@ async function getFlightHistory(flightNo) {
     const dateStr = date.toISOString().split('T')[0];
 
     try {
-      const proxy = 'https://corsproxy.io/?';
       const apiUrl = `https://www.hongkongairport.com/flightinfo-rest/rest/flights/past?date=${dateStr}&arrival=false&lang=en&cargo=false`;
-      const resp = await fetch(proxy + encodeURIComponent(apiUrl));
+      const resp = await corsFetch(apiUrl);
       const data = await resp.json();
 
       for (const day of data) {
