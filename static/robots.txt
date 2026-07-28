@@ -1,6 +1,4 @@
----
-layout: none
----
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Allow: /
 
+Sitemap: https://www.saxrag.com/sitemap.xml
