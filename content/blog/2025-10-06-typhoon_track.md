@@ -25,12 +25,16 @@ Unfortunately, it seems they only provide the latest snapshot of the trajectory 
 <table>
 <tr>
 <td>
-<img src="https://saxrag.com/bucket/typhoon/ragasa_2025-09-19T22_17_26.png" height="500">
-<em>Prediction as of 20th September 2025 ~0617hrs HKT</em>
+<figure>
+<img src="https://saxrag.com/bucket/typhoon/ragasa_2025-09-19T22_17_26.png" height="500" alt="HKO typhoon track map for Ragasa on 20 September 2025, showing the storm south of Hong Kong with a forecast path curving toward the city">
+<figcaption>Prediction as of 20th September 2025 ~0617hrs HKT</figcaption>
+</figure>
 </td>
 <td>
-<img src="https://saxrag.com/bucket/typhoon/ragasa_2025-09-23T21_18_02.png" height="500">
-<em>Prediction as of 24th September 2025 ~0518hrs HKT</em>
+<figure>
+<img src="https://saxrag.com/bucket/typhoon/ragasa_2025-09-23T21_18_02.png" height="500" alt="HKO typhoon track map for Ragasa on 24 September 2025, with the forecast path shifted closer to Hong Kong than the earlier prediction">
+<figcaption>Prediction as of 24th September 2025 ~0518hrs HKT</figcaption>
+</figure>
 </td>
 </tr>
 </table>
@@ -41,9 +45,12 @@ Since HKO conveniently provides a particular zoom-level of a specific typhoon at
 
 Then, once the typhoon is near the end, I concatenate all the images into a timelapse using ffmpeg to make some fun videos.
 
-<video height="600" autoplay muted controls>
+<figure>
+<video height="600" autoplay muted controls aria-label="Timelapse of HKO typhoon track predictions for Ragasa, zoomed out">
   <source src="https://saxrag.com/bucket/typhoon/ragasa_zoomed_out.mp4" type="video/mp4">
 </video>
+<figcaption>Timelapse of hourly HKO track snapshots for Typhoon Ragasa.</figcaption>
+</figure>
 
 ## Bonus: Deduplication
 

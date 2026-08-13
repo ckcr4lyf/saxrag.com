@@ -1,8 +1,23 @@
 {% extends "base.html" %}
 
+{% block title %}{% set blog = get_section(path="blog/_index.md") %}{% set latest = blog.pages | first %}{{ latest.title }} | {{ config.title }}{% endblock title %}
+{% block og_title %}{% set blog = get_section(path="blog/_index.md") %}{% set latest = blog.pages | first %}{{ latest.title }}{% endblock og_title %}
+{% block description %}{% set blog = get_section(path="blog/_index.md") %}{% set latest = blog.pages | first %}{% if latest.description %}{{ latest.description }}{% elif latest.extra.summary %}{{ latest.extra.summary }}{% else %}{{ config.description }}{% endif %}{% endblock description %}
+
 {% block content %}
 {% set blog = get_section(path="blog/_index.md") %}
 {% set latest = blog.pages | first %}
-<meta http-equiv="refresh" content="0; url={{ latest.permalink | replace(from=config.base_url, to='') }}">
-<p>Redirecting to <a href="{{ latest.permalink | replace(from=config.base_url, to='') }}">{{ latest.title }}</a>...</p>
+<a href="/">..</a>
+
+<article>
+  <p class="post-meta">
+    <time datetime="{{ latest.date }}">{{ latest.date | date(format="%Y-%m-%d") }}</time>
+  </p>
+
+  <h1>{{ latest.title }}</h1>
+
+  {{ latest.content | safe }}
+</article>
+
+{% include "questions.html" %}
 {% endblock content %}
