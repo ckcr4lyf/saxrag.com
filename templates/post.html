@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
+{% block og_title %}{{ page.title }}{% endblock og_title %}
+{% block description %}{% if page.description %}{{ page.description }}{% elif page.extra.summary %}{{ page.extra.summary }}{% else %}{{ config.description }}{% endif %}{% endblock description %}
+
+{% block content %}
+<a href="/">..</a>
+
+<article>
+  <p class="post-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
+  </p>
+
+  <h1>{{ page.title }}</h1>
+
+  {{ page.content | safe }}
+</article>
+
+{% include "questions.html" %}
+{% endblock content %}

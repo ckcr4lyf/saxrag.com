@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | {{ config.title }}{% endblock title %}
+
+{% block content %}
+<a href="/">..</a>
+
+<h1>Blog</h1>
+
+{% set blog_section = get_section(path="blog/_index.md") %}
+<ul>
+  {% for post in blog_section.pages %}
+  <li>
+    <span>{{ post.date | date(format="%Y-%m-%d") }}</span>
+    <a href="{{ post.permalink | replace(from=config.base_url, to="") }}">{{ post.title }}</a>
+  </li>
+  {% if post.extra.summary %}
+  <span class="summary">{{ post.extra.summary }}</span>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endblock content %}

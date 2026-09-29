@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <h1>{{ config.title }}</h1>
+</header>
+
+<nav>
+  <ul>
+    {% for item in config.extra.menu %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{{ section.content | safe }}
+
+{% include "questions.html" %}
+{% endblock content %}

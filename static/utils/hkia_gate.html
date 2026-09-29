@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HKG Gate Checker</title>
+</head>
+<body>
+  <h1>HKG Gate Checker</h1>
+  <div>
+    <p>This tool is used to check the gate a particular flight was at in the last 30 days</p>
+  </div>
+  <div>
+    <input type="text" id="flight-input" placeholder="e.g. UO 700">
+    <button onclick="getFlightHistory(document.getElementById('flight-input').value)">Search</button>
+  </div>
+  <div id="gate-history"></div>
+  <script src="hkia.js"></script>
+</body>
+</html>
